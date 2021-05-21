@@ -1,10 +1,12 @@
+import { Fragment } from 'react';
 import '../styles/App.css';
+import LandingPage from './LandingPage.js';
 
 function App() {
   return (
-    <div>
-      <h1>Podcast Prioritizer</h1>
-    </div>
+    <Fragment>
+      <LandingPage />
+    </Fragment>
   );
 }
 
