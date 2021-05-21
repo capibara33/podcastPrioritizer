@@ -24,7 +24,8 @@ body {
 
 h1 {
     font-family: 'Judson', serif;
-    font-size: 2rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
 .wrapper {
