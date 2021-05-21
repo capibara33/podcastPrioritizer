@@ -1,16 +1,16 @@
+import { Fragment } from 'react';
 import '../styles/App.css';
 import PodcastResults from './PodcastResults';
+import LandingPage from './LandingPage.js';
+import PodcastSearch from './PodcastSearch.js'
 
 function App() {
   return (
-    <div>
-      <h1>Podcast Prioritizer</h1>
-
-
+    <Fragment>
+      <LandingPage />
+      <PodcastSearch />
       <PodcastResults />
-
-      
-    </div>
+    </Fragment>
   );
 }
 
