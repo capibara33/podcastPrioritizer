@@ -7,6 +7,25 @@ import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
 
 function App() {
+
+  const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
+
+  podcastURL.search = new URLSearchParams({
+    q: 'star wars'
+  })
+  
+  fetch(podcastURL, {
+    method: "GET",
+    headers: {'X-ListenAPI-Key': '293a53ed0c034ba8b5384c3905a13cc1'}
+  })
+    .then((data) => {
+      return data.json();
+    })
+    .then((jsonResponse) => {
+      console.log(jsonResponse)
+    })
+
+
   return (
     <Fragment>
       <LandingPage />
