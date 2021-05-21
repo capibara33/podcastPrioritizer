@@ -1,10 +1,19 @@
+import { Fragment } from 'react';
 import '../styles/App.css';
+
+
+import PodcastSearch from './PodcastSearch.js'
 
 function App() {
   return (
-    <div>
-      <h1>Podcast Prioritizer</h1>
-    </div>
+    <Fragment>
+        
+
+
+
+
+      <PodcastSearch />
+    </Fragment>
   );
 }
 
