@@ -1,10 +1,17 @@
+import { Fragment } from 'react';
 import '../styles/App.css';
+import LocationForm from './LocationForm';
 
 function App() {
   return (
-    <div>
-      <h1>Podcast Prioritizer</h1>
-    </div>
+    <Fragment>
+      
+
+
+
+      <LocationForm />
+
+    </Fragment>
   );
 }
 
