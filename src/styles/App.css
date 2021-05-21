@@ -26,12 +26,41 @@ h1 {
     font-family: 'Judson', serif;
     font-size: 3rem;
     text-align: center;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    margin: 0 auto;
+    list-style: none;
+    width: fit-content;
+}
+
+footer {
+    text-align: center;
 }
 
 .wrapper {
     width: 70%;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+header,
+main {
+    background-color: #E8EB5E;
+}
+
+.instructionsContainer {
+    background-color: #F97068;
+}
+
+.instructionsContainer p {
+    text-align: center;
+    padding: 1rem;
 }
 
 .locationForm {
@@ -48,10 +77,20 @@ h1 {
 .locationButton {
   border: none;
   margin-left: 1rem;
-  background-color: white;
+  background-color: #E8EB5E;
   font-size: 1.5rem;
 }
 
 .locationButton:hover {
   cursor: pointer;
+}
+
+.podcastResults,
+.podcastResults li {
+    background-color: #EDF2EF;
+}
+
+.podcastResultsContainer {
+    background-color: #F97068;
+    margin: 3rem;
 }
