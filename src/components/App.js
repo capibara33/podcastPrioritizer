@@ -8,6 +8,23 @@ import PodcastResults from './PodcastResults';
 
 function App() {
 
+  const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+  const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
+  mapQuestURL.search = new URLSearchParams({
+    key: mapQuestKey,
+    from: 'toronto',
+    to: 'chicago'
+  })
+
+  fetch(mapQuestURL)
+  .then((response) => {
+    return response.json();
+  })
+  .then((jsonRepsonse) => {
+    console.log(jsonRepsonse);
+  })
+  
+
   const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
 
   podcastURL.search = new URLSearchParams({
@@ -26,7 +43,9 @@ function App() {
     })
 
 
+
   return (
+
     <Fragment>
       <LandingPage />
       
