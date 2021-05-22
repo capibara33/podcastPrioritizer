@@ -51,6 +51,7 @@ footer {
 
 img{
     width:100%;
+    border: 2px solid #F97068;
 }
 
 header,
@@ -119,6 +120,7 @@ main {
 .podcastResults,
 .podcastResults li {
     background-color: #EDF2EF;
+    /* border: 2px solid #F97068; */
 }
 
 
