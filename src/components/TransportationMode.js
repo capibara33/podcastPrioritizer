@@ -2,11 +2,23 @@ import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter'
 
 const TransportationMode = ({ setMapData }) => {
+    // if (! location) {
+    //   return
+    // } 
+    // let walk = {};
+    // let bike = {};
+    // // setMapData[0].realTime;
+    // // setMapData[1].realTime;
+    // if (setMapData[0] && setMapData[1]) {
+    //   walk = setMapData[0];
+    //   bike = setMapData[1];
+    // }
+    
+    // let pedestrianTime = timeConverter(setMapData[0].realTime)
+    // let bikeTime = timeConverter(setMapData[1].realTime)
+    // console.log(pedestrianTime);
 
-    console.log(setMapData);
-    // console.log('location: ', handleLocationData);
-    // console.log('destination: ', handleDestinationData);
-    // console.log(timeConverter(600000));
+
 
     return (
         <div className="wrapper transportationContainer">
@@ -14,19 +26,18 @@ const TransportationMode = ({ setMapData }) => {
             <div className="transportIconContainer">
               <div>
                 <FaWalking />
-                <p>Walking Time</p>
-                <p>Walking Distance</p>
+                {/* <p>Walking Time {pedestrianTime}</p> */}
+                {/* <p>Walking Distance {bike}</p> */}
               </div>
               <div>
                 <FaBicycle />
-                <p>Biking Time</p>
-                <p>Biking Distance</p>
+                {/* <p>Biking Time {bikeTime}</p> */}
+                {/* <p>Biking Distance {distance}</p> */}
               </div>
             </div>
         </div>
     )
 }
-
 
 
 

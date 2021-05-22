@@ -9,24 +9,24 @@ import PodcastResults from './PodcastResults';
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
-  const [location, setLocation] = useState('');
-  const [destination, setDestination] = useState('');
   const [mapData, setMapData] = useState([]);
+  const mapDataArray = [];
+  // const handleLocationData = (locationData) => {
+  //   setLocation(locationData)
+  // }
 
-  const handleLocationData = (locationData) => {
-    setLocation(locationData)
-  }
-
-  const handleDestinationData = (destinationData) => {
-    setDestination(destinationData)
-  }
+  // const handleDestinationData = (destinationData) => {
+  //   setDestination(destinationData)
+  // }
 
   const handlePodcastData = (data) => {
     setPodcasts(data);
   }
 
   const handleMapData = (mapData) => {
-    setMapData(mapData);
+    mapDataArray.push(mapData);
+    setMapData(mapDataArray);
+    console.log(mapDataArray)
   }
 
   return (
@@ -35,8 +35,8 @@ function App() {
       <LandingPage />
       
       <main>
-        <LocationForm handleLocationData={handleLocationData} handleDestinationData={handleDestinationData} location={location} destination={destination} setMapData={handleMapData}/>
-        <TransportationMode handleLocationData={location} handleDestinationData={destination} setMapData={mapData} />
+        <LocationForm setMapData={handleMapData}/>
+        <TransportationMode setMapData={mapData} />
         <PodcastSearch handlePodcastData={handlePodcastData}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>

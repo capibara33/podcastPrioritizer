@@ -1,12 +1,15 @@
 // LocationForm.js
 import { FaArrowCircleRight } from 'react-icons/fa';
+import { useState } from 'react';
 
 
-const LocationForm = ({handleLocationData, handleDestinationData, location, destination, setMapData}) => {
-
+const LocationForm = ({setMapData}) => {
+  const [location, setLocation] = useState('');
+  const [destination, setDestination] = useState('');
 
   const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
   const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
+
   const mapCall = () => {
     fetch(mapQuestURL)
       .then((response) => {
@@ -16,12 +19,6 @@ const LocationForm = ({handleLocationData, handleDestinationData, location, dest
 
         const routeObject = jsonResponse.route;
         setMapData(routeObject);
-        // // console.log(routeObject)
-        // const { realTime, distance } = routeObject;
-        // // console.log('realtime:', realTime);
-        // // console.log('distance:',distance)
-        // handleLocationData(realTime, distance);
-        // handleDestinationData(realTime, distance);
       })
   }
 
@@ -51,18 +48,26 @@ const LocationForm = ({handleLocationData, handleDestinationData, location, dest
   };
 
   const handleLocationInput = (event) => {
-    handleLocationData(event.target.value)
+    if (event.target.value === '') {
+      return
+    } else {
+      setLocation(event.target.value)
+    }
   }
 
   const handleDestinationInput = (event) => {
-    handleDestinationData(event.target.value)
+    if (event.target.value === '') {
+      return
+    } else {
+      setDestination(event.target.value)
+    }
   }
 
   const handleLocationSubmit = (event) => {
-
     event.preventDefault();
-    walkRouteFetch();
+    // This order determines which the object order within the array being Walking 1st and Biking 1st
     bikeRouteFetch();
+    walkRouteFetch();
   }
 
   return (
