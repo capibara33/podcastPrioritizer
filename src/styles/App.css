@@ -36,7 +36,7 @@ ul {
 li {
     margin: 0 auto;
     list-style: none;
-    width: fit-content;
+    width: 100%;
 }
 
 footer {
@@ -44,15 +44,20 @@ footer {
 }
 
 .wrapper {
-    width: 70%;
+    width: 80%;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+img{
+    width:100%;
 }
 
 header,
 main {
     background-color: #E8EB5E;
 }
+
 
 .instructionsContainer {
     background-color: #F97068;
@@ -64,25 +69,51 @@ main {
 }
 
 .locationForm {
-  display: flex;
+    display: flex;
 }
 
 .locationForm div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
-.locationButton {
-  border: none;
-  margin-left: 1rem;
-  background-color: #E8EB5E;
-  font-size: 1.5rem;
+.locationButton,
+.podcastButton {
+    border: none;
+    margin-left: 1rem;
+    background-color: #E8EB5E;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.locationButton:hover {
-  cursor: pointer;
+.transportIconContainer{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+.podcastSearchForm{
+    display: flex;
+    align-items: center;
+    margin: 0.5rem auto;
+}
+.randomPodcastButton{
+    background-color: #F97068;
+    border: none;
+    box-shadow: 2px 2px 2px #333;
+    margin: 1rem 0;
+    width:100%;
+}
+.podcastResults h2{
+    text-align: center;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.resultsTitle{
+    padding: 0 2rem;
 }
 
 .podcastResults,
@@ -90,7 +121,32 @@ main {
     background-color: #EDF2EF;
 }
 
+
 .podcastResultsContainer {
     background-color: #F97068;
-    margin: 3rem;
+}
+
+.podcastsList{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.podcastsList p{
+    padding: 0.5rem;
+}
+
+h3{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+footer{
+    background-color: #F97068;
+    padding: 1rem;
+}
+
+footer p{
+    margin: 0;
 }

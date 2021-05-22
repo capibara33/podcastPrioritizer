@@ -5,14 +5,14 @@ const PodcastResults = (props) => {
 
     return (
         <section className="podcastResults">
-            <div className="podcastResultsContainer">
+            <div className="wrapper podcastResultsContainer">
                 <h2>List of Podcasts</h2>
-                <ul>
+                <ul className="podcastsList">
                 {
                         podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeAudio}, index)=>{
                         return(
                             <li key={index}>
-                                <h2>{podcastTitle}</h2>
+                                <h2 className="resultsTitle">{podcastTitle}</h2>
                                 <h3>{episodeTitle}</h3>
                                 <img src={episodeImage} alt="" />
                                 <p>{episodeDescription}</p>
@@ -23,11 +23,6 @@ const PodcastResults = (props) => {
                         ) 
                     })
                 }
-                    {/* <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a?</li> */}
                 </ul>
             </div> 
         </section>

@@ -36,7 +36,7 @@ function App() {
         <PodcastResults podcastInfo={podcasts} />
       </main>
 
-      <footer>Team CAPIbara is: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</footer>
+      <footer>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</footer>
 
     </Fragment>
   );
