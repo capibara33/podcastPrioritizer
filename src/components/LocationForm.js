@@ -57,19 +57,22 @@ const LocationForm = ({handleLocationData, handleDestinationData, location, dest
   }
 
   return (
-    <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
-      <div>
-        <label htmlFor="currentLocation">Current Location:</label>
-        <input type="text" id="currentLocation" onChange={handleLocationInput}></input>
+    <div className="test">
+      <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
+        <div className="locationInputs">
+          <label htmlFor="currentLocation">Current Location:</label>
+          <input type="text" id="currentLocation" onChange={handleLocationInput}></input>
 
-        <label htmlFor="destination">Your Destination:</label>
-        <input type="text" id="destination" onChange={handleDestinationInput}></input>
-      </div>
+          <label htmlFor="destination">Your Destination:</label>
+          <input type="text" id="destination" onChange={handleDestinationInput}></input>
+        </div>
 
-      <div>
-        <button type="submit" className="locationButton"><FaArrowCircleRight /></button>
-      </div>
-    </form>
+        <div className="locationButtonContainer">
+          <button type="submit" className="locationButton"><FaArrowCircleRight /></button>
+        </div>
+      </form>
+      
+    </div>
   )
 }
 
