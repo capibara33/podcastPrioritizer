@@ -54,6 +54,11 @@ main {
     background-color: #E8EB5E;
 }
 
+.test {
+    display: flex;
+    align-items: center;
+}
+
 .instructionsContainer {
     background-color: #F97068;
 }
@@ -65,18 +70,22 @@ main {
 
 .locationForm {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.locationForm div {
+.locationInputs {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
+.locationButtonContainer {
+  cursor: pointer;
+}
 
 .locationButton {
   border: none;
-  margin-left: 1rem;
+  margin-top: 1rem;
   background-color: #E8EB5E;
   font-size: 1.5rem;
 }
