@@ -1,7 +1,7 @@
+import Swal from 'sweetalert2';
 
 const PodcastResults = (props) => {
     const {podcastInfo} = props
-
 
     return (
         <section className="podcastResults">
@@ -19,6 +19,12 @@ const PodcastResults = (props) => {
                                 <audio controls> 
                                     <source src={episodeAudio} type="audio/mpeg"/>
                                 </audio>
+                            <button onClick={() => {
+                              Swal.fire({
+                                title: 'test',
+                                text: episodeDescription
+                              })}
+                            }>Click me!</button>
                             </li>
                         ) 
                     })
