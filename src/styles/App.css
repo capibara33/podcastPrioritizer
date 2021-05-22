@@ -59,7 +59,7 @@ main {
     background-color: #E8EB5E;
 }
 
-.test {
+.locationFormContainer {
     display: flex;
     align-items: center;
 }
@@ -74,22 +74,17 @@ main {
     padding: 1rem;
 }
 
-.locationForm {
-
-    display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .locationInputs {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .locationForm {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -102,15 +97,24 @@ main {
     cursor: pointer;
 }
 
-.transportIconContainer{
+.transportIconContainer {
     display: flex;
     justify-content: space-evenly;
     font-size: 2rem;
 }
 
+.transportIconContainer p {
+    font-size: 0.6rem;
+    margin: 0;
+}
+
+.transportationContainer p {
+    text-align: center;
+}
 .podcastSearchForm{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0.5rem auto;
 }
 .randomPodcastButton{

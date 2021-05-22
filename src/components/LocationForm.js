@@ -57,7 +57,7 @@ const LocationForm = ({handleLocationData, handleDestinationData, location, dest
   }
 
   return (
-    <div className="test">
+    <div className="locationFormContainer">
       <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
         <div className="locationInputs">
           <label htmlFor="currentLocation">Current Location:</label>
