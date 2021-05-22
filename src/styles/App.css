@@ -59,6 +59,11 @@ main {
     background-color: #E8EB5E;
 }
 
+.test {
+    display: flex;
+    align-items: center;
+}
+
 
 .instructionsContainer {
     background-color: #F97068;
@@ -70,10 +75,18 @@ main {
 }
 
 .locationForm {
+
     display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.locationForm div {
+.locationInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
