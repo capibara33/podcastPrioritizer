@@ -39,6 +39,23 @@ const PodcastSearch = (props) => {
 		})
 	})
 	
+	// const randomPodcastFetch = (() => {
+	// 	const randomPodUrl = new URL('https://listen-api.listennotes.com/api/v2/just_listen')
+		
+
+	// 	fetch(randomPodUrl, {
+	// 		method: "GET",
+	// 		headers: { 'X-ListenAPI-Key': '293a53ed0c034ba8b5384c3905a13cc1' }
+	// 	})
+	// 		.then((data) => {
+	// 			return data.json();
+	// 		})
+	// 		.then((jsonResponse) => {
+	// 		console.log(jsonResponse)
+	// 			const randomPodcast = jsonresponse// handlePodcastData()
+	// 		})
+	// })
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		podcastFetch();
@@ -48,16 +65,20 @@ const PodcastSearch = (props) => {
 		setUserSearch(event.target.value)
 	}
 
+	// const handleRandomButtonClick = () => {
+	// 	randomPodcastFetch();
+	// }
+	
 
 	return(
-		<div>
-			<form action="" onSubmit={handleSubmit}>
+		<section className="wrapper podcastForm">
+			<form action=""className="podcastSearchForm" onSubmit={handleSubmit}>
 				<label htmlFor="podcastSearch" className="srOnly"></label>
 				<input type="text" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch}/>
-				<FaArrowCircleRight />
-				<button>Random Podcast</button>
+				<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
 			</form>
-		</div>
+				<button className="randomPodcastButton" /*onClick={handleRandomButtonClick}*/>Random Podcast</button>
+		</section>
 	)
 }
 

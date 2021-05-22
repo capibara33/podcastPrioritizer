@@ -3,9 +3,9 @@ import { FaWalking, FaBicycle } from 'react-icons/fa'
 
 const TransportationMode = () => {
     return (
-        <div className="transportationContainer">
+        <div className="wrapper transportationContainer">
             <p>Suggested Mode of Transporation</p>
-            <div>
+            <div className="transportIconContainer">
                 <FaWalking />
                 <FaBicycle />
             </div>
