@@ -11,6 +11,7 @@ function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [location, setLocation] = useState('');
   const [destination, setDestination] = useState('');
+  const [mapData, setMapData] = useState([]);
 
   const handleLocationData = (locationData) => {
     setLocation(locationData)
@@ -24,14 +25,18 @@ function App() {
     setPodcasts(data);
   }
 
+  const handleMapData = (mapData) => {
+    setMapData(mapData);
+  }
+
   return (
 
     <Fragment>
       <LandingPage />
       
       <main>
-        <LocationForm handleLocationData={handleLocationData} handleDestinationData={handleDestinationData} location={location} destination={destination}/>
-        <TransportationMode />
+        <LocationForm handleLocationData={handleLocationData} handleDestinationData={handleDestinationData} location={location} destination={destination} setMapData={handleMapData}/>
+        <TransportationMode handleLocationData={location} handleDestinationData={destination} setMapData={mapData} />
         <PodcastSearch handlePodcastData={handlePodcastData}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>

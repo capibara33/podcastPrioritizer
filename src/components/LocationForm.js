@@ -2,7 +2,8 @@
 import { FaArrowCircleRight } from 'react-icons/fa';
 
 
-const LocationForm = ({handleLocationData, handleDestinationData, location, destination}) => {
+const LocationForm = ({handleLocationData, handleDestinationData, location, destination, setMapData}) => {
+
 
   const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
   const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
@@ -12,7 +13,15 @@ const LocationForm = ({handleLocationData, handleDestinationData, location, dest
         return response.json();
       })
       .then((jsonResponse) => {
-        console.log(jsonResponse.route);
+
+        const routeObject = jsonResponse.route;
+        setMapData(routeObject);
+        // // console.log(routeObject)
+        // const { realTime, distance } = routeObject;
+        // // console.log('realtime:', realTime);
+        // // console.log('distance:',distance)
+        // handleLocationData(realTime, distance);
+        // handleDestinationData(realTime, distance);
       })
   }
 

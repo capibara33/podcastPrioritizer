@@ -33,7 +33,6 @@ const PodcastSearch = (props) => {
 					episodeAudio:podcast.audio
 				}
 			})
-			console.log(podcastArray)
 			handlePodcastData(podcastArray)
 			
 		})
