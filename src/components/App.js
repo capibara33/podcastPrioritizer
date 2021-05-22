@@ -10,27 +10,9 @@ import PodcastResults from './PodcastResults';
 function App() {
   const [podcasts, setPodcasts] = useState([]);
 
-  // const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-  // const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
-  // mapQuestURL.search = new URLSearchParams({
-  //   key: mapQuestKey,
-  //   from: 'toronto',
-  //   to: 'chicago'
-  // })
-
-  // fetch(mapQuestURL)
-  // .then((response) => {
-  //   return response.json();
-  // })
-  // .then((jsonResponse) => {
-  //   console.log(jsonResponse);
-  // })
-  
-
   const handlePodcastData = (data) => {
     setPodcasts(data);
   }
-
 
   return (
 
