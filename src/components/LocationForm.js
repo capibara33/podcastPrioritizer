@@ -1,49 +1,59 @@
 // LocationForm.js
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { useState } from 'react';
 
-const LocationForm = () => {
 
-  const [location, setLocation] = useState('');
-  const [destination, setDestination] = useState('');
+const LocationForm = ({handleLocationData, handleDestinationData, location, destination}) => {
 
-  const routeFetch = () => {
-    const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-    const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
-  
+  const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+  const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
+  const mapCall = () => {
+    fetch(mapQuestURL)
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonResponse) => {
+        console.log(jsonResponse.route);
+      })
+  }
+
+  const walkRouteFetch = () => {
     // parameters
-  mapQuestURL.search = new URLSearchParams({
-    key: mapQuestKey,
-    from: location,
-    to: destination
-  })
-
-  // fetch
-  fetch(mapQuestURL)
-    .then((response) => {
-      return response.json();
+    mapQuestURL.search = new URLSearchParams({
+      key: mapQuestKey,
+      from: location,
+      to: destination,
+      unit: 'k',
+      routeType: 'pedestrian'
     })
-    .then((jsonResponse) => {
-      console.log('route:', jsonResponse.route);
+    // fetch
+    mapCall();
+  };
+  const bikeRouteFetch = () => {
+    // parameters
+    mapQuestURL.search = new URLSearchParams({
+      key: mapQuestKey,
+      from: location,
+      to: destination,
+      unit: 'k',
+      routeType: 'bicycle'
     })
+    // fetch
+    mapCall();
   };
 
   const handleLocationInput = (event) => {
-    let location = event.target.value;
-    setLocation(location);
+    handleLocationData(event.target.value)
   }
 
   const handleDestinationInput = (event) => {
-    let destination = event.target.value;
-    setDestination(destination);
+    handleDestinationData(event.target.value)
   }
 
   const handleLocationSubmit = (event) => {
 
     event.preventDefault();
-    console.log(location);
-    console.log(destination);
-    routeFetch();
+    walkRouteFetch();
+    bikeRouteFetch();
   }
 
   return (

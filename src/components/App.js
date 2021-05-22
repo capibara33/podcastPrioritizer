@@ -9,6 +9,16 @@ import PodcastResults from './PodcastResults';
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
+  const [location, setLocation] = useState('');
+  const [destination, setDestination] = useState('');
+
+  const handleLocationData = (locationData) => {
+    setLocation(locationData)
+  }
+
+  const handleDestinationData = (destinationData) => {
+    setDestination(destinationData)
+  }
 
   const handlePodcastData = (data) => {
     setPodcasts(data);
@@ -20,7 +30,7 @@ function App() {
       <LandingPage />
       
       <main>
-        <LocationForm />
+        <LocationForm handleLocationData={handleLocationData} handleDestinationData={handleDestinationData} location={location} destination={destination}/>
         <TransportationMode />
         <PodcastSearch handlePodcastData={handlePodcastData}/>
         <PodcastResults podcastInfo={podcasts} />

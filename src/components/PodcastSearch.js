@@ -1,5 +1,5 @@
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const PodcastSearch = (props) => {
 	const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
