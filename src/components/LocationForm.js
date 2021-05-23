@@ -8,7 +8,7 @@ const LocationForm = ({setMapData}) => {
   const [destination, setDestination] = useState('');
 
   const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-  const mapQuestKey = 'yhn7INwuFvAefsr6GSedhz0ry1k94m6b';
+  const mapQuestKey = '85d9QlTc92OXzKSDUGGbDDMPZQteWDr0';
 
   const mapCall = () => {
     fetch(mapQuestURL)
@@ -16,9 +16,9 @@ const LocationForm = ({setMapData}) => {
         return response.json();
       })
       .then((jsonResponse) => {
-
         const routeObject = jsonResponse.route;
         setMapData(routeObject);
+        console.log(routeObject);
       })
   }
 
