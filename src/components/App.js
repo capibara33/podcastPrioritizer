@@ -10,7 +10,7 @@ import PodcastResults from './PodcastResults';
 function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [mapData, setMapData] = useState([]);
-  const mapDataArray = [];
+  // const mapDataArray = [];
   // const handleLocationData = (locationData) => {
   //   setLocation(locationData)
   // }
@@ -24,9 +24,9 @@ function App() {
   }
 
   const handleMapData = (mapData) => {
-    mapDataArray.push(mapData);
-    setMapData(mapDataArray);
-    console.log(mapDataArray)
+    // mapDataArray.push(mapData);
+    // setMapData(mapDataArray);
+    // console.log(mapDataArray)
   }
 
   return (
@@ -36,7 +36,7 @@ function App() {
       
       <main>
         <LocationForm setMapData={handleMapData}/>
-        <TransportationMode setMapData={mapData} />
+        {/* <TransportationMode setMapData={mapData} /> */}
         <PodcastSearch handlePodcastData={handlePodcastData}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
