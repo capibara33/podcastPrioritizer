@@ -36,7 +36,7 @@ const LocationForm = ({handleCommuteTime}) => {
         setTempWalk(routeObject)
       })
 
-  },[walkResponse]) 
+  }, [walkResponse])
 
   useEffect(() => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
@@ -75,7 +75,7 @@ const LocationForm = ({handleCommuteTime}) => {
     setBikeResponse(tempBike)
   }
 
-  // console.log(walkResponse.realTime)
+
 
   return (
     <>
@@ -95,25 +95,20 @@ const LocationForm = ({handleCommuteTime}) => {
       </form>
     </div>
 
-     <div className="wrapper transportationContainer">
+    <div className="wrapper transportationContainer">
         <p>Suggested Mode of Transportation</p>
         <div className="transportIconContainer">
-          <div>
 
-            <button onClick={()=>{handleCommuteTime(walkResponse.realTime)}}>
+            <button onClick={() => { handleCommuteTime(walkResponse.realTime) }} className="walkButton">
               <FaWalking />
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
             </button>
-
-          </div>
-          <div>
           
-            <button onClick={()=>{handleCommuteTime(bikeResponse.realTime)}}>
+            <button onClick={() => { handleCommuteTime(bikeResponse.realTime) }} className="bikeButton">
               <FaBicycle />
               <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
               {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
-
               {bikeResponse.distance 
               ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
 
@@ -122,8 +117,6 @@ const LocationForm = ({handleCommuteTime}) => {
               (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
             
             </button>
-            
-          </div>
         </div>
     </div>
     </>
