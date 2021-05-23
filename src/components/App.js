@@ -5,6 +5,7 @@ import LocationForm from './LocationForm';
 // import TransportationMode from './TransportationMode';
 import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
+import { animateScroll as scroll } from 'react-scroll'
 
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
 
   const handleCommuteTime = (time) => {
     setCommuteTime(time)
+  }
+
+  const toTop = () => {
+    scroll.scrollToTop();
   }
 
   console.log(commuteTime)
@@ -33,6 +38,7 @@ function App() {
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
+      <button onClick={ toTop }>Scroll to top</button>
 
       <footer>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</footer>
 
