@@ -3,15 +3,20 @@ import { useState } from 'react'
 
 const PodcastSearch = (props) => {
 	const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
-	const { handlePodcastData } = props
+	const { handlePodcastData, commuteTime } = props
 	const [userSearch, setUserSearch] = useState('');
 
+	const commuteInMinutes = Math.floor(commuteTime / 60)
+
+	// console.log(commuteInMinutes + 10)
+
 	const podcastFetch = (() => {
-		
+	
+	
 	podcastURL.search = new URLSearchParams({
 		q: userSearch,
-		len_min: 0,
-		len_max: 180
+		len_min: commuteInMinutes,
+		len_max: commuteInMinutes + 10,
 	})
 
 	fetch(podcastURL, {

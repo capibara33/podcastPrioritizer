@@ -1,19 +1,22 @@
 // LocationForm.js
 import { FaArrowCircleRight } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import { FaWalking, FaBicycle } from 'react-icons/fa'
+import timeConverter from '../utilities/timeConverter.js'
 
 
-const LocationForm = () => {
+const LocationForm = ({handleCommuteTime}) => {
   const [location, setLocation] = useState('');
   const [destination, setDestination] = useState('');
-  const [walkResponse, setWalkResponse] = useState('')
-  const [bikeResponse, setBikeResponse] = useState('')
-  const [tempWalk, setTempWalk] = useState('')
-  const [tempBike, setTempBike] = useState('')
+  const [walkResponse, setWalkResponse] = useState([])
+  const [bikeResponse, setBikeResponse] = useState([])
+  const [tempWalk, setTempWalk] = useState([])
+  const [tempBike, setTempBike] = useState([])
 
   const mapQuestKey = '85d9QlTc92OXzKSDUGGbDDMPZQteWDr0';
   
   useEffect (()=>{
+
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
 
     mapQuestURL.search = new URLSearchParams({
@@ -58,10 +61,6 @@ const LocationForm = () => {
   }, [bikeResponse])
 
 
-
-
- 
-
   const handleLocationInput = (event) => {
       setLocation(event.target.value)
   }
@@ -76,7 +75,7 @@ const LocationForm = () => {
     setBikeResponse(tempBike)
   }
 
-
+  // console.log(walkResponse.realTime)
 
   return (
     <>
@@ -97,17 +96,33 @@ const LocationForm = () => {
     </div>
 
      <div className="wrapper transportationContainer">
-        <p>Suggested Mode of Transporation</p>
+        <p>Suggested Mode of Transportation</p>
         <div className="transportIconContainer">
           <div>
-            {/* <FaWalking /> */}
-            <p>Walking Time {walkResponse.realTime}</p>
-            <p>Walking Distance {walkResponse.distance}</p>
+
+            <button onClick={()=>{handleCommuteTime(walkResponse.realTime)}}>
+              <FaWalking />
+              <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
+              <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
+            </button>
+
           </div>
           <div>
-            {/* <FaBicycle /> */}
-            <p>Biking Time {bikeResponse.realTime}</p>
-            <p>Biking Distance {bikeResponse.distance}</p>
+          
+            <button onClick={()=>{handleCommuteTime(bikeResponse.realTime)}}>
+              <FaBicycle />
+              <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
+              {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
+
+              {bikeResponse.distance 
+              ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
+
+              : <p>Careful with headphones bro</p> }
+{/*               
+              (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
+            
+            </button>
+            
           </div>
         </div>
     </div>

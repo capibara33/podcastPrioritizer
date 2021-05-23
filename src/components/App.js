@@ -2,32 +2,25 @@ import { Fragment, useState } from 'react';
 import '../styles/App.css';
 import LandingPage from './LandingPage';
 import LocationForm from './LocationForm';
-import TransportationMode from './TransportationMode';
+// import TransportationMode from './TransportationMode';
 import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
 
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
-  const [mapData, setMapData] = useState([]);
-  // const mapDataArray = [];
-  // const handleLocationData = (locationData) => {
-  //   setLocation(locationData)
-  // }
-
-  // const handleDestinationData = (destinationData) => {
-  //   setDestination(destinationData)
-  // }
+  const [commuteTime, setCommuteTime] = useState(0)
 
   const handlePodcastData = (data) => {
     setPodcasts(data);
   }
 
-  const handleMapData = (mapData) => {
-    // mapDataArray.push(mapData);
-    // setMapData(mapDataArray);
-    // console.log(mapDataArray)
+  const handleCommuteTime = (time) => {
+    setCommuteTime(time)
   }
+
+  console.log(commuteTime)
+
 
   return (
     
@@ -35,9 +28,9 @@ function App() {
       <LandingPage />
       
       <main>
-        <LocationForm setMapData={handleMapData}/>
+        <LocationForm handleCommuteTime={handleCommuteTime}/>
         {/* <TransportationMode setMapData={mapData} /> */}
-        <PodcastSearch handlePodcastData={handlePodcastData}/>
+        <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
 
