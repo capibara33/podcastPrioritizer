@@ -13,6 +13,11 @@ Yellow: #E8EB5E
 Pale Grey: #EDF2EF
 Light Red: #F97068 */
 
+.highlight {
+    background-color: #F97068;
+}
+
+
 html {
     font-size: 125%;
 }

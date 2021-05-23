@@ -5,7 +5,7 @@ import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 
 
-const LocationForm = ({handleCommuteTime}) => {
+const LocationForm = ({handleCommuteTime, highlightWalk, highlightBike, handleLightWalk, handleLightBike}) => {
   const [location, setLocation] = useState('');
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
@@ -100,7 +100,10 @@ const LocationForm = ({handleCommuteTime}) => {
         <div className="transportIconContainer">
           <div>
 
-            <button onClick={()=>{handleCommuteTime(walkResponse.realTime)}}>
+            <button 
+            className={highlightWalk ? 'highlight' : ''} 
+            onClick={()=>{
+              handleCommuteTime(walkResponse.realTime);handleLightWalk()}}>
               <FaWalking />
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
@@ -109,7 +112,8 @@ const LocationForm = ({handleCommuteTime}) => {
           </div>
           <div>
           
-            <button onClick={()=>{handleCommuteTime(bikeResponse.realTime)}}>
+            <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
+              handleCommuteTime(bikeResponse.realTime);handleLightBike()}}>
               <FaBicycle />
               <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
               {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
