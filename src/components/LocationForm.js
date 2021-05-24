@@ -10,7 +10,7 @@ const LocationForm = ({handleCommuteTime}) => {
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
   const [bikeResponse, setBikeResponse] = useState([])
-  const [highlightWalk, setHighlightWalk] = useState(false)
+  const [highlightWalk, setHighlightWalk] = useState(true)
   const [highlightBike, setHighlightBike] = useState(false)
 
   const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
