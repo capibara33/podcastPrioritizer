@@ -1,6 +1,6 @@
 // LocationForm.js
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 
@@ -10,15 +10,14 @@ const LocationForm = ({handleCommuteTime}) => {
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
   const [bikeResponse, setBikeResponse] = useState([])
-  const [tempWalk, setTempWalk] = useState([])
-  const [tempBike, setTempBike] = useState([])
+  const [highlightWalk, setHighlightWalk] = useState(false)
+  const [highlightBike, setHighlightBike] = useState(false)
 
-  const mapQuestKey = '85d9QlTc92OXzKSDUGGbDDMPZQteWDr0';
+  const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
   
-  useEffect (()=>{
-
+  const walking = () => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-
+    
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
       from: location,
@@ -26,21 +25,19 @@ const LocationForm = ({handleCommuteTime}) => {
       unit: 'k',
       routeType: 'pedestrian'
     })
-    
     fetch(mapQuestURL)
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonResponse) => {
-        const routeObject = jsonResponse.route;
-        setTempWalk(routeObject)
-      })
-
-  }, [walkResponse])
-
-  useEffect(() => {
+    .then((response) => {
+      return response.json();
+    })
+    .then((jsonResponse) => {
+      const routeObject = jsonResponse.route;
+      setWalkResponse(routeObject)
+    })
+  }
+    
+  const biking = () => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-
+    
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
       from: location,
@@ -48,34 +45,48 @@ const LocationForm = ({handleCommuteTime}) => {
       unit: 'k',
       routeType: 'bicycle'
     })
-
     fetch(mapQuestURL)
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonResponse) => {
-        const routeObject = jsonResponse.route;
-        setTempBike(routeObject)
-      })
-
-  }, [bikeResponse])
-
-
-  const handleLocationInput = (event) => {
-      setLocation(event.target.value)
+    .then((response) => {
+      return response.json();
+    })
+    .then((jsonResponse) => {
+      const routeObject = jsonResponse.route;
+      setBikeResponse(routeObject)
+    })
   }
-
-  const handleDestinationInput = (event) => {
-      setDestination(event.target.value)
-  }
-
+      
   const handleLocationSubmit = (event) => {
     event.preventDefault();
-    setWalkResponse(tempWalk)
-    setBikeResponse(tempBike)
+    walking()
+    biking()
+  }
+      
+  const handleLocationInput = (event) => {
+    setLocation(event.target.value)
+  }
+  
+  const handleDestinationInput = (event) => {
+    setDestination(event.target.value)
   }
 
+  const handleLightWalk = () => {
+    if (highlightBike) {
+    setHighlightBike(!highlightBike)
+    setHighlightWalk(!highlightWalk)
+  }
+  else { 
+    setHighlightWalk(!highlightWalk)}
+  }
 
+  const handleLightBike = () => {
+    if (highlightWalk) {
+      setHighlightBike(!highlightBike)
+      setHighlightWalk(!highlightWalk)
+    }
+    else {
+      setHighlightBike(!highlightBike)
+    }
+  }
 
   return (
     <>
@@ -98,14 +109,19 @@ const LocationForm = ({handleCommuteTime}) => {
     <div className="wrapper transportationContainer">
         <p>Suggested Mode of Transportation</p>
         <div className="transportIconContainer">
-
-            <button onClick={() => { handleCommuteTime(walkResponse.realTime) }} className="walkButton">
+          
+            <button 
+            className={highlightWalk ? 'highlight' : ''} 
+            onClick={()=>{
+              handleCommuteTime(walkResponse.realTime);handleLightWalk()}}>
               <FaWalking />
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
             </button>
           
-            <button onClick={() => { handleCommuteTime(bikeResponse.realTime) }} className="bikeButton">
+            <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
+              handleCommuteTime(bikeResponse.realTime);handleLightBike()}}>
+
               <FaBicycle />
               <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
               {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}

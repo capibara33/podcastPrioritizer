@@ -12,6 +12,7 @@ function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [commuteTime, setCommuteTime] = useState(0)
 
+
   const handlePodcastData = (data) => {
     setPodcasts(data);
   }
@@ -19,13 +20,10 @@ function App() {
   const handleCommuteTime = (time) => {
     setCommuteTime(time)
   }
-
+  
   const toTop = () => {
     scroll.scrollToTop();
   }
-
-  console.log(commuteTime)
-
 
   return (
     
@@ -33,8 +31,8 @@ function App() {
       <LandingPage />
       
       <main>
-        <LocationForm handleCommuteTime={handleCommuteTime}/>
-        {/* <TransportationMode setMapData={mapData} /> */}
+        <LocationForm 
+        handleCommuteTime={handleCommuteTime}/>
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
