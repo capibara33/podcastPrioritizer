@@ -137,7 +137,8 @@ main {
     margin: 0.5rem auto;
 }
 
-.randomPodcastButton{
+.randomPodcastButton,
+.scrollToTop{
     background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
