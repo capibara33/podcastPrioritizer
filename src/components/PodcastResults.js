@@ -1,10 +1,11 @@
 import Swal from 'sweetalert2';
 import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
+import { createPortal } from 'react-dom/cjs/react-dom.development';
 
 const PodcastResults = (props) => {
     const {podcastInfo} = props
-    console.log(props)
+
 
     return (
         <section className="podcastResults">
@@ -12,6 +13,7 @@ const PodcastResults = (props) => {
                 <h2>List of Podcasts</h2>
                 <ul className="podcastsList">
                 {
+                        
                         podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio}, index)=>{
                         return(
                             <li key={index}>
@@ -43,6 +45,7 @@ const PodcastResults = (props) => {
                             </li>
                         ) 
                     })
+                    
                 }
                 </ul>
             </div> 
