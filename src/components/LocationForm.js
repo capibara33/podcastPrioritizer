@@ -69,7 +69,6 @@ const LocationForm = ({handleCommuteTime}) => {
     setDestination(event.target.value)
   }
 
-  
   const handleLightWalk = () => {
     if (highlightBike) {
     setHighlightBike(!highlightBike)
@@ -107,11 +106,10 @@ const LocationForm = ({handleCommuteTime}) => {
       </form>
     </div>
 
-     <div className="wrapper transportationContainer">
+    <div className="wrapper transportationContainer">
         <p>Suggested Mode of Transportation</p>
         <div className="transportIconContainer">
-          <div>
-
+          
             <button 
             className={highlightWalk ? 'highlight' : ''} 
             onClick={()=>{
@@ -120,16 +118,13 @@ const LocationForm = ({handleCommuteTime}) => {
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
             </button>
-
-          </div>
-          <div>
           
             <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
               handleCommuteTime(bikeResponse.realTime);handleLightBike()}}>
+
               <FaBicycle />
               <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
               {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
-
               {bikeResponse.distance 
               ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
 
@@ -138,8 +133,6 @@ const LocationForm = ({handleCommuteTime}) => {
               (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
             
             </button>
-            
-          </div>
         </div>
     </div>
     </>

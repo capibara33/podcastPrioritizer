@@ -49,15 +49,11 @@ footer {
 }
 
 .wrapper {
-    width: 80%;
+    width: 90%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
-img{
-    width:100%;
-    border: 2px solid #F97068;
-}
 
 header,
 main {
@@ -102,10 +98,22 @@ main {
     cursor: pointer;
 }
 
+.locationButton:hover,
+.podcastButton:hover, 
+.locationButton:focus,
+.podcastButton:focus {
+    color: #F97068;
+}
+
 .transportIconContainer {
     display: flex;
     justify-content: space-evenly;
     font-size: 2rem;
+}
+
+.transportIconContainer button{
+    flex-basis: 50%;
+    padding: 0.5rem 0;
 }
 
 .transportIconContainer p {
@@ -116,12 +124,19 @@ main {
 .transportationContainer p {
     text-align: center;
 }
+
+.walkButton:hover,
+.bikeButton:hover{
+    background-color: #F97068;
+}
+
 .podcastSearchForm{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0.5rem auto;
 }
+
 .randomPodcastButton{
     background-color: #F97068;
     border: none;
@@ -129,10 +144,12 @@ main {
     margin: 1rem 0;
     width:100%;
 }
-.podcastResults h2{
+
+.podcastResults h3{
     text-align: center;
-    margin: 0;
-    padding-top: 1rem;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1.2rem;
 }
 
 .resultsTitle{
@@ -142,12 +159,59 @@ main {
 .podcastResults,
 .podcastResults li {
     background-color: #EDF2EF;
-    /* border: 2px solid #F97068; */
+    border: 2px solid #F97068;
 }
 
+img{
+    max-width: 400px;
+    max-height: 400px;
+    width: 100px;
+    height: 100px;
+    
+    border: 2px solid #F97068;
+}
 
 .podcastResultsContainer {
     background-color: #F97068;
+
+}
+
+.podcastResultsContainer h2{
+    text-align: center;
+}
+
+.podcastTitleContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #E8EB5E;
+    align-items: center;
+}
+
+.liContainer{
+    width: 100%
+}
+
+.podcastInfoContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.podcastInfoButton, 
+a {
+    background-color: #F97068;
+    border: none;
+    box-shadow: 2px 2px 2px #333;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 .podcastsList{
@@ -157,9 +221,15 @@ main {
     justify-content: center;
 }
 
+.podcastsList li{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
 .podcastsList p{
     padding: 0.5rem;
 }
+
 
 h3{
     margin: 1rem 0;

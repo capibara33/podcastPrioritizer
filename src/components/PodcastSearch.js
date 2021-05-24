@@ -29,13 +29,16 @@ const PodcastSearch = (props) => {
 		.then((jsonResponse) => {
 			
 			const podcastData = jsonResponse.results
+			console.log(podcastData)
 			const podcastArray = podcastData.map((podcast) => {
+
 				return {
-					podcastTitle:podcast.title_original,
-					episodeTitle:podcast.podcast_title_original,
+					podcastTitle:podcast.podcast_title_original,
+					episodeTitle:podcast.title_original,
 					episodeImage:podcast.image,
 					episodeDescription:podcast.description_original,
-					episodeAudio:podcast.audio
+					episodeAudio:podcast.audio,
+					episodeLengthInSec:podcast.audio_length_sec
 				}
 			})
 			handlePodcastData(podcastArray)

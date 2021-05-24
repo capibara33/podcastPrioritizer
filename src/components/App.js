@@ -36,7 +36,7 @@ function App() {
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
-      <button onClick={ toTop }>Scroll to top</button>
+      <button className="scrolltoTop"onClick={ toTop }>Scroll to top</button>
 
       <footer>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</footer>
 
