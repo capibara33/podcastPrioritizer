@@ -11,8 +11,7 @@ import { animateScroll as scroll } from 'react-scroll'
 function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [commuteTime, setCommuteTime] = useState(0)
-  const [highlightWalk, setHighlightWalk] = useState(false)
-  const [highlightBike, setHighlightBike] = useState(false)
+
 
   const handlePodcastData = (data) => {
     setPodcasts(data);
@@ -22,30 +21,9 @@ function App() {
     setCommuteTime(time)
   }
   
-  const handleLightWalk = ()=>{
-    if (highlightBike) {
-      setHighlightBike(!highlightBike)
-      setHighlightWalk(!highlightWalk)
-    }
-    else {setHighlightWalk(!highlightWalk)}
-  }
-
-  const handleLightBike = () =>{
-    if (highlightWalk) {
-      setHighlightBike(!highlightBike)
-      setHighlightWalk(!highlightWalk)
-    }
-    else {
-      setHighlightBike(!highlightBike)
-    }
-  }
-
   const toTop = () => {
     scroll.scrollToTop();
   }
-
-  console.log(commuteTime)
-
 
   return (
     
@@ -54,12 +32,7 @@ function App() {
       
       <main>
         <LocationForm 
-        handleCommuteTime={handleCommuteTime} 
-        highlightWalk={highlightWalk} 
-        handleLightWalk={handleLightWalk} 
-        highlightBike={highlightBike}
-        handleLightBike={handleLightBike}/>
-        {/* <TransportationMode setMapData={mapData} /> */}
+        handleCommuteTime={handleCommuteTime}/>
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>

@@ -1,24 +1,23 @@
 // LocationForm.js
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 
 
-const LocationForm = ({handleCommuteTime, highlightWalk, highlightBike, handleLightWalk, handleLightBike}) => {
+const LocationForm = ({handleCommuteTime}) => {
   const [location, setLocation] = useState('');
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
   const [bikeResponse, setBikeResponse] = useState([])
-  const [tempWalk, setTempWalk] = useState([])
-  const [tempBike, setTempBike] = useState([])
+  const [highlightWalk, setHighlightWalk] = useState(false)
+  const [highlightBike, setHighlightBike] = useState(false)
 
-  const mapQuestKey = '85d9QlTc92OXzKSDUGGbDDMPZQteWDr0';
+  const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
   
-  useEffect (()=>{
-
+  const walking = () => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-
+    
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
       from: location,
@@ -26,21 +25,19 @@ const LocationForm = ({handleCommuteTime, highlightWalk, highlightBike, handleLi
       unit: 'k',
       routeType: 'pedestrian'
     })
-    
     fetch(mapQuestURL)
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonResponse) => {
-        const routeObject = jsonResponse.route;
-        setTempWalk(routeObject)
-      })
-
-  },[walkResponse]) 
-
-  useEffect(() => {
+    .then((response) => {
+      return response.json();
+    })
+    .then((jsonResponse) => {
+      const routeObject = jsonResponse.route;
+      setWalkResponse(routeObject)
+    })
+  }
+    
+  const biking = () => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
-
+    
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
       from: location,
@@ -48,34 +45,49 @@ const LocationForm = ({handleCommuteTime, highlightWalk, highlightBike, handleLi
       unit: 'k',
       routeType: 'bicycle'
     })
-
     fetch(mapQuestURL)
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonResponse) => {
-        const routeObject = jsonResponse.route;
-        setTempBike(routeObject)
-      })
-
-  }, [bikeResponse])
-
-
-  const handleLocationInput = (event) => {
-      setLocation(event.target.value)
+    .then((response) => {
+      return response.json();
+    })
+    .then((jsonResponse) => {
+      const routeObject = jsonResponse.route;
+      setBikeResponse(routeObject)
+    })
   }
-
-  const handleDestinationInput = (event) => {
-      setDestination(event.target.value)
-  }
-
+      
   const handleLocationSubmit = (event) => {
     event.preventDefault();
-    setWalkResponse(tempWalk)
-    setBikeResponse(tempBike)
+    walking()
+    biking()
+  }
+      
+  const handleLocationInput = (event) => {
+    setLocation(event.target.value)
+  }
+  
+  const handleDestinationInput = (event) => {
+    setDestination(event.target.value)
   }
 
-  // console.log(walkResponse.realTime)
+  
+  const handleLightWalk = () => {
+    if (highlightBike) {
+    setHighlightBike(!highlightBike)
+    setHighlightWalk(!highlightWalk)
+  }
+  else { 
+    setHighlightWalk(!highlightWalk)}
+  }
+
+  const handleLightBike = () => {
+    if (highlightWalk) {
+      setHighlightBike(!highlightBike)
+      setHighlightWalk(!highlightWalk)
+    }
+    else {
+      setHighlightBike(!highlightBike)
+    }
+  }
 
   return (
     <>
