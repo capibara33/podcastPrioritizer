@@ -30,7 +30,7 @@ const staticMap = (sessionId) => {
 }
   
   const walking = () => {
-    const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+    const mapQuestURL = new URL(`https://www.mapquestapi.com/directions/v2/route`)
     
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
@@ -51,7 +51,7 @@ const staticMap = (sessionId) => {
   }
     
   const biking = () => {
-    const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+    const mapQuestURL = new URL(`https://www.mapquestapi.com/directions/v2/route`)
     
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
