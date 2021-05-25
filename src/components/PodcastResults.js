@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2';
 import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
-import { createPortal } from 'react-dom/cjs/react-dom.development';
 
 const PodcastResults = (props) => {
     const {podcastInfo} = props
@@ -35,10 +34,7 @@ const PodcastResults = (props) => {
                                             })
                                         }
                                     }>Learn More</button>
-                                        <a aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio}>Listen Here <FiExternalLink /> </a>
-                                    {/* <audio controls> 
-                                        <source src={episodeAudio} type="audio/mpeg"/>
-                                    </audio> */}
+                                <a aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio} rel="noreferrer">Listen Here <FiExternalLink /> </a>
                                     
                                     </div>
                                 </div>

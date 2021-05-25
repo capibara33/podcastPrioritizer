@@ -47,31 +47,7 @@ const PodcastSearch = (props) => {
 			
 		})
 	})
-	
-	// const randomPodcastFetch = (() => {
-	// 	const randomPodUrl = new URL('https://listen-api.listennotes.com/api/v2/just_listen')
-		
 
-	// 	fetch(randomPodUrl, {
-	// 		method: "GET",
-	// 		headers: { 'X-ListenAPI-Key': '293a53ed0c034ba8b5384c3905a13cc1' }
-	// 	})
-	// 		.then((data) => {
-	// 			return data.json();
-	// 		})
-	// 		.then((jsonResponse) => {
-	// 		console.log(jsonResponse)
-	// 			const randomPodcastObject = {
-	// 				podcastTitle: jsonResponse.podcast_title,
-	// 				episodeTitle: jsonResponse.title,
-	// 				episodeImage: jsonResponse.image,
-	// 				episodeDescription: jsonResponse.description,
-	// 				episodeAudio: jsonResponse.audio,
-	// 				episodeLengthInSec: jsonResponse.audio_length_sec
-	// 			}
-	// 			handlePodcastData(randomPodcastObject)
-	// 		})
-	// })
 	const selectRandomSearch = (array) => {
 		const randomIndex = array[Math.floor(Math.random() * array.length)];
 		setUserSearch(randomIndex)
@@ -97,7 +73,7 @@ const PodcastSearch = (props) => {
 		<section className="wrapper podcastForm">
 			<form action=""className="podcastSearchForm" onSubmit={handleSubmit}>
 				<label htmlFor="podcastSearch" >Search for Podcast Title or Keyword</label>
-				<input type="text" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch}/>
+				<input type="text" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
 				<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
 			</form>
 				<button className="randomPodcastButton" onClick={handleRandomButtonClick}>Random Podcast</button>

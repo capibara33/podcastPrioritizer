@@ -155,7 +155,7 @@ const staticMap = (sessionId) => {
         </div>
         <div className="mapContainer">
           {mapResults ?
-            <img className="mapResult" src={mapResults} aria-label={`image of a map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="http://placecorgi.com/250"></img>}
+            <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="http://placecorgi.com/250" alt="a lovely corgi"></img>}
         </div>
     </div>
     </>
