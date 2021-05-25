@@ -82,21 +82,16 @@ const staticMap = () => {
   }
 
   const handleLightWalk = () => {
-    if (highlightBike) {
-    setHighlightBike(!highlightBike)
-    setHighlightWalk(!highlightWalk)
-  }
-  else { 
-    setHighlightWalk(!highlightWalk)}
-  }
-
-  const handleLightBike = () => {
-    if (highlightWalk) {
+    if (!highlightWalk) {
       setHighlightBike(!highlightBike)
       setHighlightWalk(!highlightWalk)
     }
-    else {
+  }
+
+  const handleLightBike = () => {
+    if (!highlightBike) {
       setHighlightBike(!highlightBike)
+      setHighlightWalk(!highlightWalk)
     }
   }
 
