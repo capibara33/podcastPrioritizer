@@ -250,3 +250,9 @@ footer p{
   width: 400px;
   height: 400px;
 }
+
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
