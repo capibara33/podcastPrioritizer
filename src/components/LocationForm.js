@@ -12,8 +12,19 @@ const LocationForm = ({handleCommuteTime}) => {
   const [bikeResponse, setBikeResponse] = useState([])
   const [highlightWalk, setHighlightWalk] = useState(true)
   const [highlightBike, setHighlightBike] = useState(false)
+  const [mapResults, setMapResult] = useState('');
 
   const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
+
+const staticMap = () => {
+  const staticURL = new URL('https://www.mapquestapi.com/staticmap/v5/map')
+  staticURL.search = new URLSearchParams({
+    key: mapQuestKey,
+    start: location,
+    end: destination
+  })
+  setMapResult(staticURL)
+}
   
   const walking = () => {
     const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
@@ -57,8 +68,9 @@ const LocationForm = ({handleCommuteTime}) => {
       
   const handleLocationSubmit = (event) => {
     event.preventDefault();
-    walking()
-    biking()
+    walking();
+    biking();
+    staticMap();
   }
       
   const handleLocationInput = (event) => {
@@ -105,7 +117,10 @@ const LocationForm = ({handleCommuteTime}) => {
         </div>
       </form>
     </div>
-
+    <div>
+      { mapResults ?
+      <img className="mapResult" src={mapResults}></img> : null }
+    </div>
     <div className="wrapper transportationContainer">
         <p>Suggested Mode of Transportation</p>
         <div className="transportIconContainer">
@@ -118,7 +133,6 @@ const LocationForm = ({handleCommuteTime}) => {
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
             </button>
-          
             <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
               handleCommuteTime(bikeResponse.realTime);handleLightBike()}}>
 
