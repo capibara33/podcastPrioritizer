@@ -5,16 +5,18 @@ const PodcastSearch = (props) => {
 	const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
 	const { handlePodcastData, commuteTime } = props
 	const [userSearch, setUserSearch] = useState('');
+	
 	const commuteInMinutes = Math.floor(commuteTime / 60)
+	
 	const suggestedUserSearch = ["music", "movies", "art", "dance", "programming", "ants", "travel", "news", "sports", "food", "paranormal", "books", "true crime", "tv", "comedy", "video games", "aliens"]
 
 	// console.log(commuteInMinutes + 10)
 
-	const podcastFetch = (() => {
+	const podcastFetch = ((query) => {
 	
 	
 	podcastURL.search = new URLSearchParams({
-		q: userSearch,
+		q: query,
 		len_min: commuteInMinutes,
 		len_max: commuteInMinutes + 10,
 	})
@@ -73,13 +75,13 @@ const PodcastSearch = (props) => {
 	const selectRandomSearch = (array) => {
 		const randomIndex = array[Math.floor(Math.random() * array.length)];
 		setUserSearch(randomIndex)
-		podcastFetch();
+		podcastFetch(randomIndex);
 	}
 
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		podcastFetch();
+		podcastFetch(userSearch);
 	}
 
 	const handlePodcastSearch = (event) => {
