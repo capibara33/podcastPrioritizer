@@ -16,14 +16,17 @@ const LocationForm = ({handleCommuteTime}) => {
 
   const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
 
-const staticMap = () => {
+const staticMap = (sessionId) => {
+  if (!sessionId) {
+    alert('plz write something');
+  } else {
   const staticURL = new URL('https://www.mapquestapi.com/staticmap/v5/map')
   staticURL.search = new URLSearchParams({
     key: mapQuestKey,
-    start: location,
-    end: destination
+    session: sessionId
   })
   setMapResult(staticURL)
+  }
 }
   
   const walking = () => {
@@ -44,6 +47,7 @@ const staticMap = () => {
       const routeObject = jsonResponse.route;
       setWalkResponse(routeObject)
     })
+
   }
     
   const biking = () => {
@@ -70,7 +74,6 @@ const staticMap = () => {
     event.preventDefault();
     walking();
     biking();
-    staticMap();
   }
       
   const handleLocationInput = (event) => {
@@ -107,10 +110,10 @@ const staticMap = () => {
       <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
         <div className="locationInputs">
           <label htmlFor="currentLocation">Current Location:</label>
-          <input type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+          <input required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
           <label htmlFor="destination">Your Destination:</label>
-          <input type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
+          <input required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
         </div>
 
         <div className="locationButtonContainer">
@@ -118,24 +121,25 @@ const staticMap = () => {
         </div>
       </form>
     </div>
-    <div>
-      { mapResults ?
-      <img className="mapResult" src={mapResults}></img> : null }
-    </div>
+
     <div className="wrapper transportationContainer">
-        <p>Suggested Mode of Transportation</p>
+        <p>Choose Mode of Transportation</p>
         <div className="transportIconContainer">
           
             <button 
             className={highlightWalk ? 'highlight' : ''} 
             onClick={()=>{
-              handleCommuteTime(walkResponse.realTime);handleLightWalk()}}>
+              handleCommuteTime(walkResponse.realTime);handleLightWalk();
+              staticMap(walkResponse.sessionId);
+              }}>
               <FaWalking />
               <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
               <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
             </button>
             <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
-              handleCommuteTime(bikeResponse.realTime);handleLightBike()}}>
+              handleCommuteTime(bikeResponse.realTime);handleLightBike();
+              staticMap(bikeResponse.sessionId);
+              }}>
 
               <FaBicycle />
               <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
@@ -148,6 +152,10 @@ const staticMap = () => {
               (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
             
             </button>
+        </div>
+        <div className="mapContainer">
+          {mapResults ?
+            <img className="mapResult" src={mapResults} aria-label={`image of a map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="http://placecorgi.com/250"></img>}
         </div>
     </div>
     </>
