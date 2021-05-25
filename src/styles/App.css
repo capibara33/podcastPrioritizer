@@ -245,3 +245,8 @@ footer{
 footer p{
     margin: 0;
 }
+
+.mapResult {
+  width: 400px;
+  height: 400px;
+}
