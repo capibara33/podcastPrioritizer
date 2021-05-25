@@ -10,7 +10,7 @@ const LocationForm = ({handleCommuteTime}) => {
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
   const [bikeResponse, setBikeResponse] = useState([])
-  const [highlightWalk, setHighlightWalk] = useState(true)
+  const [highlightWalk, setHighlightWalk] = useState(false)
   const [highlightBike, setHighlightBike] = useState(false)
   const [mapResults, setMapResult] = useState('');
 
@@ -82,16 +82,22 @@ const staticMap = () => {
   }
 
   const handleLightWalk = () => {
-    if (!highlightWalk) {
+    if (highlightBike) {
       setHighlightBike(!highlightBike)
+      setHighlightWalk(!highlightWalk)
+    }
+    else {
       setHighlightWalk(!highlightWalk)
     }
   }
 
   const handleLightBike = () => {
-    if (!highlightBike) {
+    if (highlightWalk) {
       setHighlightBike(!highlightBike)
       setHighlightWalk(!highlightWalk)
+    }
+    else {
+      setHighlightBike(!highlightBike)
     }
   }
 
