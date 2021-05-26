@@ -132,9 +132,16 @@ const staticMap = (sessionId) => {
               handleCommuteTime(walkResponse.realTime);handleLightWalk();
               staticMap(walkResponse.sessionId);
               }}>
+              
               <FaWalking />
-              <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
-              <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
+              <p>Walking Time: {timeConverter(walkResponse.realTime)}</p>
+
+              {walkResponse.distance
+              ? <p>Walking Distance: {(walkResponse.distance).toFixed(1)}km</p>
+
+              : <p>Walking Distance:</p> }
+
+
             </button>
             <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
               handleCommuteTime(bikeResponse.realTime);handleLightBike();
@@ -142,14 +149,12 @@ const staticMap = (sessionId) => {
               }}>
 
               <FaBicycle />
-              <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
-              {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
+              <p>Biking Time: {timeConverter(bikeResponse.realTime)}</p>
+
               {bikeResponse.distance 
               ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
 
-              : <p>Careful with headphones bro</p> }
-{/*               
-              (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
+              : <p>Biking Distance:</p> }
             
             </button>
         </div>

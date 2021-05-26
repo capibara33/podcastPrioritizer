@@ -104,7 +104,7 @@ main {
     margin-left: 1rem;
     background-color: #E8EB5E;
     font-size: 2rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .locationButton:hover,
@@ -112,6 +112,14 @@ main {
 .locationButton:focus,
 .podcastButton:focus {
     color: #F97068;
+    cursor: pointer;
+}
+
+.randomPodcastButton:hover,
+.podcastInfoButton:hover,
+a:hover {
+    background-color: #EDF2EF;
+    cursor: pointer;
 }
 
 .locationButton {
@@ -127,6 +135,14 @@ main {
 .transportIconContainer button{
     flex-basis: 50%;
     padding: 0.5rem 0;
+}
+
+.transportIconContainer button:nth-of-type(1) {
+    margin-right: 0.5rem;
+}
+
+.transportIconContainer button:nth-of-type(2) {
+    margin-left: 0.5rem;
 }
 
 .transportIconContainer p {
@@ -178,7 +194,19 @@ main {
     border: none;
     box-shadow: 2px 2px 2px #333;
     margin: 1rem 0;
-    width:100%;
+}
+
+.randomPodcastContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.randomPodcastButton {
+    padding: 0.5rem;
+}
+
+.scrollToTop {
+    width: 100%;
 }
 
 .podcastResults h3{

@@ -80,7 +80,9 @@ const PodcastSearch = (props) => {
 					<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
 				</div>
 			</form>
-				<button className="randomPodcastButton" onClick={handleRandomButtonClick}>Random Podcast</button>
+				<div className="randomPodcastContainer">
+					<button className="randomPodcastButton" onClick={handleRandomButtonClick}>Need a suggestion?</button>
+				</div>
 		</section>
 	)
 }
