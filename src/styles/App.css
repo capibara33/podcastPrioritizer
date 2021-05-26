@@ -118,7 +118,7 @@ main {
 .randomPodcastButton:hover,
 .podcastInfoButton:hover,
 a:hover {
-    background-color: #EDF2EF;
+    background-color: skyblue;
     cursor: pointer;
 }
 
@@ -237,6 +237,7 @@ img{
 
 .podcastResultsContainer {
     background-color: #F97068;
+    /* background-color: #E8EB5E; */
 
 }
 
