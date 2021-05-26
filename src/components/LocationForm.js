@@ -107,59 +107,67 @@ const staticMap = (sessionId) => {
 
   return (
     <>
-    <div className="locationFormContainer">
-      <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
-        <div className="locationInputs">
-          <label htmlFor="currentLocation">Current Location:</label>
-          <input required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+      <h2>Step 1: Pick a location AND destination to get started.</h2>
+      <div className="locationFormContainer">
+        <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
+          <div className="locationInputs">
+            <label htmlFor="currentLocation">Current Location:</label>
+            <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
-          <label htmlFor="destination">Your Destination:</label>
-          <input required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
-        </div>
+            <label htmlFor="destination">Your Destination:</label>
+            <input placeholder="1 Blue Jays Way Toronto" required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
+          </div>
 
-        <div className="locationButtonContainer">
-          <button type="submit" className="locationButton"><FaArrowCircleRight /></button>
-        </div>
-      </form>
-    </div>
+          <div className="locationButtonContainer">
+            <button type="submit" className="locationButton"><FaArrowCircleRight /></button>
+          </div>
+        </form>
+      </div>
 
-    <div className="wrapper transportationContainer">
-        <p>Choose Mode of Transportation</p>
-        <div className="transportIconContainer">
-          
-            <button 
-            className={highlightWalk ? 'highlight' : ''} 
-            onClick={()=>{
-              handleCommuteTime(walkResponse.realTime);handleLightWalk();
-              staticMap(walkResponse.sessionId);
-              }}>
-              <FaWalking />
-              <p>Walking Time {timeConverter(walkResponse.realTime)}</p>
-              <p>Walking Distance {walkResponse.distance ? (walkResponse.distance).toFixed(1) : 'why you walk?'}km</p> 
-            </button>
-            <button className={highlightBike ? 'highlight' : ''} onClick={()=>{
-              handleCommuteTime(bikeResponse.realTime);handleLightBike();
-              staticMap(bikeResponse.sessionId);
-              }}>
-
-              <FaBicycle />
-              <p>Biking Time {timeConverter(bikeResponse.realTime)}</p>
-              {/* <p>Biking Distance {bikeResponse.distance ? (bikeResponse.distance).toFixed(1) : 'careful with headphones bro '}km</p> */}
-              {bikeResponse.distance 
-              ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
-
-              : <p>Careful with headphones bro</p> }
-{/*               
-              (bikeResponse.distance).toFixed(1) : 'careful with headphones bro ' */}
+      <div className="wrapper transportationContainer">
+          <h2>Step 2: Tell us how you want to get there.</h2>
+          <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
+          <div className="transportIconContainer">
             
-            </button>
-        </div>
-        <div className="mapContainer">
-          {mapResults ?
-            <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img> : <Giphy />}
-        </div>
+              <button aria-label="transportation method: walk"
+              className={highlightWalk && 'highlight'} 
+              onClick={()=>{
+                handleCommuteTime(walkResponse.realTime);handleLightWalk();
+                staticMap(walkResponse.sessionId);
+                }}>
+                
+                <FaWalking />
+                <p>Time: {timeConverter(walkResponse.realTime)}</p>
 
-    </div>
+                {walkResponse.distance
+                ? <p>Distance: {(walkResponse.distance).toFixed(1)} km</p>
+                : <p>Distance:</p> }
+
+
+              </button>
+              <button aria-label="transportation method: bicycle" className={highlightBike && 'highlight'} onClick={()=>{
+                handleCommuteTime(bikeResponse.realTime);handleLightBike();
+                staticMap(bikeResponse.sessionId);
+                }}>
+
+                <FaBicycle />
+                <p>Time: {timeConverter(bikeResponse.realTime)}</p>
+
+                {bikeResponse.distance 
+                ? <p>Distance {(bikeResponse.distance).toFixed(1)} km</p>
+                : <p>Distance:</p> 
+                }
+              
+              </button>
+          </div>
+          <div className="mapContainer">
+            {mapResults 
+              ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
+              : <Giphy />
+            }
+          </div>
+      </div>
+
     </>
   )
 }
