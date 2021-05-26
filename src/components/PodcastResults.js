@@ -15,9 +15,7 @@ const PodcastResults = (props) => {
     return (
         <section className="podcastResults">
             {/* This ternary allows the h2 to append if the array is not empty */}
-            {podcastInfo.length !== 0 ? <h2>List of Podcasts</h2>
-            : null
-            }
+            {podcastInfo.length !== 0 && <h2> Step 4: Profit</h2>}
 
             {/* This ternary maps through the podcast components when it receives information from the podcast form */}
             {podcastInfo ? podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio}, index)=>{
@@ -31,7 +29,7 @@ const PodcastResults = (props) => {
                                         <h3 className="resultsTitle">{podcastTitle}</h3>
                                     </div>
                                     <div className="podcastInfoContainer">
-                                        <p>Episode title: {episodeTitle}</p>
+                                        <p>Episode: {episodeTitle}</p>
                                         <p>Length: {timeConverter(episodeLengthInSec)}</p>
                                     </div>
                                     <div className="podcastInfoButtonContainer">
@@ -53,6 +51,7 @@ const PodcastResults = (props) => {
                     </div> 
                 ) 
             })
+            // this is the end of ternary - if there is no podcast, an empty <p> tag will take its place
             : <p></p>
             }
             <div className="wrapper scrollButtonContainer">
