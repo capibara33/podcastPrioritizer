@@ -256,3 +256,10 @@ footer p{
   justify-content: center;
   margin: 1rem 0;
 }
+
+.giph {
+    border: 0;
+    display: block;
+    height: auto;
+    width: calc(11rem + 5vw);
+}
