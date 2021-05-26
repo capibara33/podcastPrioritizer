@@ -160,7 +160,7 @@ const staticMap = (sessionId) => {
         </div>
         <div className="mapContainer">
           {mapResults ?
-            <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="http://placecorgi.com/250" alt="a lovely corgi"></img>}
+            <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="https://www.placecage.com/200/300" alt="pictures of nicolas cage"></img>}
         </div>
     </div>
     </>

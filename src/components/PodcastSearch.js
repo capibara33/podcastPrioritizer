@@ -9,7 +9,7 @@ const PodcastSearch = (props) => {
 	
 	const commuteInMinutes = Math.floor(commuteTime / 60);
 	
-	const suggestedUserSearch = ["music", "movies", "art", "dance", "programming", "ants", "travel", "news", "sports", "food", "paranormal", "books", "true crime", "tv", "comedy", "video games", "aliens"]
+	const suggestedUserSearch = ["music", "movies", "art", "dance", "programming", "ants", "travel", "news", "sports", "food", "paranormal", "books", "true crime", "tv", "comedy", "video games", "aliens", "acting", "photography", "dogs", "cats"]
 
 	const podcastFetch = ((query) => {
 		podcastURL.search = new URLSearchParams({

@@ -34,6 +34,10 @@ h1 {
     margin: 0;
 }
 
+img{
+    border: 2px solid #F97068;
+}
+
 ul {
     padding: 0;
 }
@@ -44,8 +48,19 @@ li {
     width: 100%;
 }
 
-footer {
+h3{
+    margin: 1rem 0;
     text-align: center;
+}
+
+footer{
+    background-color: #F97068;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p{
+    margin: 0;
 }
 
 .wrapper {
@@ -116,14 +131,28 @@ main {
 }
 
 .randomPodcastButton:hover,
+.randomPodcastButton:focus,
 .podcastInfoButton:hover,
-a:hover {
+.podcastInfoButton:focus,
+.listenLink:hover,
+.listenLink:focus,
+.scrollToTop:hover,
+.scrollToTop:focus {
     background-color: skyblue;
     cursor: pointer;
 }
 
 .locationButton {
     margin-top: 2.1rem
+}
+
+/* This makes sure the buttons container doesn't get too big */
+.transportationContainer {
+    max-width: 900px;
+}
+
+.transportationContainer p {
+    text-align: center;
 }
 
 .transportIconContainer {
@@ -150,18 +179,22 @@ a:hover {
     margin: 0;
 }
 
-/* This makes sure the buttons container doesn't get too big */
-.transportationContainer {
-    max-width: 900px;
-}
-
-.transportationContainer p {
-    text-align: center;
-}
-
 .walkButton:hover,
 .bikeButton:hover{
     background-color: #F97068;
+}
+
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+.mapResult {
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .podcastSearchForm{
@@ -193,7 +226,7 @@ a:hover {
     background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
-    margin: 1rem 0;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .randomPodcastContainer {
@@ -205,8 +238,18 @@ a:hover {
     padding: 0.5rem;
 }
 
+.podcastImage {
+    height: 150px;
+    width: 150px;
+}
+
+.scrollButtonContainer {
+    display:flex;
+    justify-content: center;
+}
+
 .scrollToTop {
-    width: 100%;
+    padding: 0.5rem 2rem;
 }
 
 .podcastResults h3{
@@ -223,15 +266,6 @@ a:hover {
 .podcastResults,
 .podcastResults li {
     background-color: #EDF2EF;
-    border: 2px solid #F97068;
-}
-
-img{
-    max-width: 400px;
-    max-height: 400px;
-    width: 100px;
-    height: 100px;
-    
     border: 2px solid #F97068;
 }
 
@@ -264,7 +298,7 @@ img{
 }
 
 .podcastInfoButton, 
-a {
+.listenLink {
     background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
@@ -274,7 +308,7 @@ a {
     color: black;
 }
 
-a{
+a {
     color: black;
     text-decoration: none;
 }
@@ -295,28 +329,7 @@ a{
     padding: 0.5rem;
 }
 
-
-h3{
-    margin: 1rem 0;
-    text-align: center;
+.listennotesLogo {
+    max-width: 16rem;
 }
 
-footer{
-    background-color: #F97068;
-    padding: 1rem;
-}
-
-footer p{
-    margin: 0;
-}
-
-.mapResult {
-  width: 400px;
-  height: 400px;
-}
-
-.mapContainer {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-}

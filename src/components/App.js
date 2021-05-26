@@ -2,10 +2,10 @@ import { Fragment, useState } from 'react';
 import '../styles/App.css';
 import LandingPage from './LandingPage';
 import LocationForm from './LocationForm';
-// import TransportationMode from './TransportationMode';
 import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
-import { animateScroll as scroll } from 'react-scroll'
+// import { animateScroll as scroll } from 'react-scroll';
+// import listennotesLogo from '../assets/listennotesLogo.png';
 
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
     setCommuteTime(time)
   }
   
-  const toTop = () => {
-    scroll.scrollToTop();
-  }
+  // const toTop = () => {
+  //   scroll.scrollToTop();
+  // }
 
   return (
     
@@ -36,11 +36,15 @@ function App() {
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
-      <div className="wrapper">
+      {/* <div className="wrapper scrollButtonContainer">
         <button className="scrollToTop" onClick={ toTop }>Scroll to top</button>
-      </div>
+      </div> */}
 
-      <footer>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</footer>
+      <footer>
+        <p>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</p>
+        <p>Made @ <a href="https://junocollege.com/">Juno College </a>2021</p>
+        <img src={process.env.PUBLIC_URL + 'listennotesLogo.png'} alt="powered by listen notes logo" className="listennotesLogo"/> 
+      </footer>
 
     </Fragment>
   );
