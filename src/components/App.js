@@ -41,8 +41,17 @@ function App() {
       </div> */}
 
       <footer>
-        <p>Made by Team CAPIbara: Clement Sung, Aubrey Kazdan, Paul Szadurski and Ilya Marvin</p>
+        <p className="githubLinks">
+          Team CAPIbara is: 
+          <a href="https://github.com/clembrulee"> Clement Sung</a>, 
+          <a href="https://github.com/aubreykazdan"> Aubrey Kazdan</a>, 
+          <a href="https://github.com/PaulSzadurski"> Paul Szadurski </a> 
+          and
+          <a href="https://github.com/IlyaMarvinIlyashyk"> Ilya Marvin</a> 
+        </p>
+
         <p>Made @ <a href="https://junocollege.com/">Juno College </a>2021</p>
+
         <img src={process.env.PUBLIC_URL + 'listennotesLogo.png'} alt="powered by listen notes logo" className="listennotesLogo"/> 
       </footer>
 

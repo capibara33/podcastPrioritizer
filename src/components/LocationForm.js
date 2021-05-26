@@ -123,7 +123,7 @@ const staticMap = (sessionId) => {
     </div>
 
     <div className="wrapper transportationContainer">
-        <p>Choose Mode of Transportation</p>
+        <h2>Step 2: Tell us how you want to get there.</h2>
         <div className="transportIconContainer">
           
             <button 
@@ -153,14 +153,16 @@ const staticMap = (sessionId) => {
 
               {bikeResponse.distance 
               ? <p>Biking Distance {(bikeResponse.distance).toFixed(1)}km</p>
-
-              : <p>Biking Distance:</p> }
+              : <p>Biking Distance:</p> 
+              }
             
             </button>
         </div>
         <div className="mapContainer">
-          {mapResults ?
-            <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img> : <img className="mapResult" src="https://www.placecage.com/200/300" alt="pictures of nicolas cage"></img>}
+          {mapResults 
+            ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
+            : <img className="mapResult" src="https://www.placecage.com/200/300" alt="pictures of nicolas cage"></img>
+          }
         </div>
     </div>
     </>
