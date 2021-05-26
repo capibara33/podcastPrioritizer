@@ -26,6 +26,7 @@ const PodcastSearch = (props) => {
 		})
 		.then((jsonResponse) => {
 			const podcastData = jsonResponse.results
+
 			const podcastArray = podcastData.map((podcast) => {
 				return {
 					podcastTitle:podcast.podcast_title_original,

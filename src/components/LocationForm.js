@@ -3,6 +3,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
+import Giphy from './Giphy.js'
 
 
 const LocationForm = ({handleCommuteTime}) => {
@@ -162,10 +163,11 @@ const staticMap = (sessionId) => {
           <div className="mapContainer">
             {mapResults 
               ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
-              : <img className="mapResult" src="https://www.placecage.com/200/300" alt="pictures of nicolas cage"></img>
+              : <Giphy />
             }
           </div>
       </div>
+
     </>
   )
 }
