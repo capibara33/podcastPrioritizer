@@ -118,9 +118,8 @@ const staticMap = (sessionId) => {
                 {walkResponse.distance
                 ? <p>Distance: {(walkResponse.distance).toFixed(1)} km</p>
                 : <p>Distance:</p> }
-
-
               </button>
+
               <button aria-label="transportation method: bicycle" onClick={()=>{
                 handleCommuteTime(bikeResponse.realTime);
                 staticMap(bikeResponse.sessionId);
