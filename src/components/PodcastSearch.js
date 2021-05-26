@@ -31,7 +31,7 @@ const PodcastSearch = (props) => {
 		.then((jsonResponse) => {
 			
 			const podcastData = jsonResponse.results
-			console.log(podcastData)
+			// console.log(podcastData)
 			const podcastArray = podcastData.map((podcast) => {
 
 				return {
