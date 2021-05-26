@@ -12,11 +12,11 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 Yellow: #E8EB5E
 Pale Grey: #EDF2EF
 Light Red: #F97068 */
+/* Gold Croyola: #EFC88B */
 
 .highlight {
     background-color: #F97068;
 }
-
 
 html {
     font-size: 125%;
@@ -25,6 +25,7 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
+    background-color: #E8EB5E;
 }
 
 h1 {
@@ -32,6 +33,21 @@ h1 {
     font-size: 3rem;
     text-align: center;
     margin: 0;
+}
+
+h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+h3{
+    margin: 1rem 0;
+    text-align: center;
+}
+img{
+    /* border: 5px solid #F97068; */
+    border: 5px solid skyblue;
+    border-radius: 30px;
 }
 
 ul {
@@ -44,8 +60,15 @@ li {
     width: 100%;
 }
 
-footer {
+
+footer{
+    background-color: #EDF2EF;
+    padding: 1rem;
     text-align: center;
+}
+
+footer p{
+    margin: 0;
 }
 
 .wrapper {
@@ -60,6 +83,11 @@ main {
     background-color: #E8EB5E;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 .locationFormContainer {
     display: flex;
     align-items: center;
@@ -70,7 +98,7 @@ main {
     background-color: #F97068;
 }
 
-.instructionsContainer p {
+.instructionsContainer h2 {
     text-align: center;
     padding: 1rem;
 }
@@ -79,6 +107,15 @@ main {
 .locationInputs {
     display: flex;
     flex-direction: column;
+}
+
+.locationInputs input,
+.podcastSearchForm input {
+    min-width: 12rem;
+}
+
+.locationInputs label {
+    margin: 0.5rem 0;
 }
 
 .locationForm {
@@ -94,8 +131,7 @@ main {
     border: none;
     margin-left: 1rem;
     background-color: #E8EB5E;
-    font-size: 1.5rem;
-    cursor: pointer;
+    font-size: 2rem;
 }
 
 .locationButton:hover,
@@ -103,6 +139,38 @@ main {
 .locationButton:focus,
 .podcastButton:focus {
     color: #F97068;
+    cursor: pointer;
+}
+
+.randomPodcastButton:hover,
+.randomPodcastButton:focus,
+.learnMoreButton:hover,
+.learnMoreButton:focus,
+.listenLink:hover,
+.listenLink:focus,
+.scrollToTop:hover,
+.scrollToTop:focus {
+    background-color: #EFC88B;
+    cursor: pointer;
+}
+
+.locationButton {
+    margin-top: 2.1rem
+}
+
+/* This makes sure the buttons container doesn't get too big */
+.transportationContainer {
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+.transportationContainer h2 {
+    text-align: center;
+}
+
+.transportationContainer p {
+    text-align: center;
+    font-size: 0.8rem;
 }
 
 .transportIconContainer {
@@ -112,22 +180,49 @@ main {
 }
 
 .transportIconContainer button{
-    flex-basis: 50%;
+    flex-basis: 35%;
     padding: 0.5rem 0;
+}
+
+.transportIconContainer button:nth-of-type(1) {
+    margin-right: 0.5rem;
+}
+
+.transportIconContainer button:nth-of-type(2) {
+    margin-left: 0.5rem;
 }
 
 .transportIconContainer p {
     font-size: 0.6rem;
+    line-height: 15px;
     margin: 0;
-}
-
-.transportationContainer p {
-    text-align: center;
 }
 
 .walkButton:hover,
 .bikeButton:hover{
     background-color: #F97068;
+}
+
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+.mapResult {
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.podcastForm {
+    margin-top: 1.5rem;
+}
+
+.podcastForm h2 {
+    text-align: center;
+    font-size: 1rem;
 }
 
 .podcastSearchForm{
@@ -137,82 +232,91 @@ main {
     margin: 0.5rem auto;
 }
 
-.randomPodcastButton,
-.scrollToTop{
+.podcastSearchForm input {
+    margin-top: 1rem;
+}
+
+.podcastButtonContainer {
+    margin: 1rem 0 0 0;
+}
+
+.podcastButton {
+    margin-top: 0.5rem
+}
+
+.randomPodcastButton {
     background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
-    margin: 1rem 0;
-    width:100%;
+    margin: 0.5rem 0 1rem 0;
 }
 
-.podcastResults h3{
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
-    font-size: 1.2rem;
+.randomPodcastContainer {
+    display: flex;
+    justify-content: center;
 }
+
+.randomPodcastButton {
+    padding: 0.5rem;
+}
+
+.podcastImage {
+    height: 125px;
+    width: 125px;
+    border-radius: 15px;
+}
+
+
 
 .resultsTitle{
     padding: 0 2rem;
 }
 
-.podcastResults,
-.podcastResults li {
-    background-color: #EDF2EF;
+.podcastResults {
+    background-color: #F97068;
     border: 2px solid #F97068;
 }
 
-img{
-    max-width: 400px;
-    max-height: 400px;
-    width: 100px;
-    height: 100px;
-    
+.podcastResults li {
+    background-color: #EDF2EF;
     border: 2px solid #F97068;
+    border-radius: 20px;
+}
+
+.podcastResults h2 {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.podcastResults h3{
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .podcastResultsContainer {
     background-color: #F97068;
-
-}
-
-.podcastResultsContainer h2{
-    text-align: center;
+    /* background-color: #E8EB5E; */
 }
 
 .podcastTitleContainer {
     display: flex;
     flex-direction: row;
-    background-color: #E8EB5E;
     align-items: center;
+    background-color: #E8EB5E;
+    border-radius: 20px;
 }
 
 .liContainer{
     width: 100%
 }
 
-.podcastInfoContainer{
-    width: 100%;
+.podcastInfoContainer {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.podcastInfoButton, 
-a {
-    background-color: #F97068;
-    border: none;
-    box-shadow: 2px 2px 2px #333;
-    margin: 1rem 0;
-    padding: 0.5rem;
-    text-decoration: none;
-    color: black;
-}
-
-a{
-    color: black;
-    text-decoration: none;
+    flex-direction: column;
+    max-height: 20rem;
 }
 
 .podcastsList{
@@ -228,27 +332,49 @@ a{
 }
 
 .podcastsList p{
-    padding: 0.5rem;
+    padding: 0.5rem 0 0 0.5rem;
 }
 
-
-h3{
-    margin: 1rem 0;
-    text-align: center;
+.podcastInfoButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-footer{
+.learnMoreButton, 
+.listenLink {
     background-color: #F97068;
-    padding: 1rem;
+    border: none;
+    box-shadow: 2px 2px 2px #333;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
 }
 
-footer p{
-    margin: 0;
+.listenLink {
+    font-weight: bolder;
 }
 
-.mapResult {
-  width: 400px;
-  height: 400px;
+.scrollButtonContainer {
+    display:flex;
+    justify-content: center;
+}
+
+footer p,
+footer img {
+    padding: 0.2rem;
+}
+
+
+.listennotesLogo {
+    max-width: 16rem;
+    border: none;
+}
+
+.githubLinks a {
+    font-weight: bolder;
 }
 
 .mapContainer {
@@ -256,3 +382,32 @@ footer p{
   justify-content: center;
   margin: 1rem 0;
 }
+
+.giph {
+    border: 0;
+    display: block;
+    height: auto;
+    width: calc(11rem + 5vw);
+
+}
+
+.swal2-html-container {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+.scrollToTop {
+    padding: 0.5rem 2rem;
+    background-color: #E8EB5E;
+    border: none;
+    box-shadow: 2px 2px 2px #333;
+    margin: 0.5rem 0 1rem 0;
+}
+
+@media (max-width: 400px) {
+  .swal2-title {
+    font-size: 1.5rem !important;
+  }
+
+}
+
