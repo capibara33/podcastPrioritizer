@@ -256,3 +256,14 @@ footer p{
   justify-content: center;
   margin: 1rem 0;
 }
+
+.swal2-html-container {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+@media (max-width: 400px) {
+  .swal2-title {
+    font-size: 1.5rem !important;
+  }
+}
