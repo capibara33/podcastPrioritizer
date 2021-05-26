@@ -129,7 +129,7 @@ const staticMap = (sessionId) => {
           <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
           <div className="transportIconContainer">
               <button aria-label="transportation method: walk"
-              className={highlightWalk && 'highlight'} 
+              className={highlightWalk ? 'highlight' : ''} 
               onClick={()=>{
                 handleCommuteTime(walkResponse.realTime);handleLightWalk();
                 staticMap(walkResponse.sessionId);
@@ -144,7 +144,7 @@ const staticMap = (sessionId) => {
 
 
               </button>
-              <button aria-label="transportation method: bicycle" className={highlightBike && 'highlight'} onClick={()=>{
+              <button aria-label="transportation method: bicycle" className={highlightBike ? 'highlight' : ''} onClick={()=>{
                 handleCommuteTime(bikeResponse.realTime);handleLightBike();
                 staticMap(bikeResponse.sessionId);
                 }}>
