@@ -11,8 +11,6 @@ const LocationForm = ({handleCommuteTime}) => {
   const [destination, setDestination] = useState('');
   const [walkResponse, setWalkResponse] = useState([])
   const [bikeResponse, setBikeResponse] = useState([])
-  const [highlightWalk, setHighlightWalk] = useState(false)
-  const [highlightBike, setHighlightBike] = useState(false)
   const [mapResults, setMapResult] = useState('');
 
   const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
@@ -85,26 +83,6 @@ const staticMap = (sessionId) => {
     setDestination(event.target.value)
   }
 
-  const handleLightWalk = () => {
-    if (highlightBike) {
-      setHighlightBike(!highlightBike)
-      setHighlightWalk(!highlightWalk)
-    }
-    else {
-      setHighlightWalk(!highlightWalk)
-    }
-  }
-
-  const handleLightBike = () => {
-    if (highlightWalk) {
-      setHighlightBike(!highlightBike)
-      setHighlightWalk(!highlightWalk)
-    }
-    else {
-      setHighlightBike(!highlightBike)
-    }
-  }
-
   return (
     <>
       <h2>Step 1: Pick a location AND destination to get started.</h2>
@@ -130,9 +108,8 @@ const staticMap = (sessionId) => {
           <div className="transportIconContainer">
             
               <button aria-label="transportation method: walk"
-              className={highlightWalk && 'highlight'} 
               onClick={()=>{
-                handleCommuteTime(walkResponse.realTime);handleLightWalk();
+                handleCommuteTime(walkResponse.realTime);
                 staticMap(walkResponse.sessionId);
                 }}>
                 
@@ -145,8 +122,8 @@ const staticMap = (sessionId) => {
 
 
               </button>
-              <button aria-label="transportation method: bicycle" className={highlightBike && 'highlight'} onClick={()=>{
-                handleCommuteTime(bikeResponse.realTime);handleLightBike();
+              <button aria-label="transportation method: bicycle" onClick={()=>{
+                handleCommuteTime(bikeResponse.realTime);
                 staticMap(bikeResponse.sessionId);
                 }}>
 

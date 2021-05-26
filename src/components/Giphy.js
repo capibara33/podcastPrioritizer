@@ -4,9 +4,9 @@ const Giphy = () => {
 
     const [giph, setGiph] = useState([]);
     
-    const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`);
-
     useEffect(()=>{
+        const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`);
+        
         giphyUrl.search = new URLSearchParams({
             api_key: 'HVo4BiCuwH7vyhWSzlAfRqhIp06cIt7O',
             ids: 'XeGljuPcbTPtfEwQVo, gFfd9ZgyukhImSYwPa, poqFvVAbhzqwrYqfSG,cIhkizr8QLITdoWSzC,ifGVZZ9QEEMs1ia0OJ,s9vFiYCdomuycLyT1X'
