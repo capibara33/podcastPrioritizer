@@ -173,6 +173,10 @@ a {
     font-size: 0.8rem;
 }
 
+.transportationContainer button:focus {
+    background-color: #F97068;
+}
+
 .transportIconContainer {
     display: flex;
     justify-content: space-evenly;
