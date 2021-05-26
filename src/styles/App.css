@@ -12,6 +12,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 Yellow: #E8EB5E
 Pale Grey: #EDF2EF
 Light Red: #F97068 */
+/* Gold Croyola: #EFC88B */
 
 .highlight {
     background-color: #F97068;
@@ -149,7 +150,7 @@ a {
 .listenLink:focus,
 .scrollToTop:hover,
 .scrollToTop:focus {
-    background-color: skyblue;
+    background-color: #EFC88B;
     cursor: pointer;
 }
 
@@ -247,8 +248,7 @@ a {
     margin-top: 0.5rem
 }
 
-.randomPodcastButton,
-.scrollToTop{
+.randomPodcastButton {
     background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
@@ -357,13 +357,13 @@ a {
     color: black;
 }
 
+.listenLink {
+    font-weight: bolder;
+}
+
 .scrollButtonContainer {
     display:flex;
     justify-content: center;
-}
-
-.scrollToTop {
-    padding: 0.5rem 2rem;
 }
 
 footer p,
@@ -398,6 +398,14 @@ footer img {
 .swal2-html-container {
   max-height: 20rem;
   overflow-y: scroll;
+}
+
+.scrollToTop {
+    padding: 0.5rem 2rem;
+    background-color: #E8EB5E;
+    border: none;
+    box-shadow: 2px 2px 2px #333;
+    margin: 0.5rem 0 1rem 0;
 }
 
 @media (max-width: 400px) {

@@ -44,7 +44,7 @@ const PodcastResults = (props) => {
                                             })
                                         }
                                     }>Learn More</button>
-                                <a aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio} rel="noreferrer">Listen Here <FiExternalLink /> </a>
+                                <a className="listenLink" aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio} rel="noreferrer">Listen Here <FiExternalLink /> </a>
 
                                     </div>
                                 </div>
