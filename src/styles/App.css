@@ -257,6 +257,12 @@ footer p{
   margin: 1rem 0;
 }
 
+.giph {
+    border: 0;
+    display: block;
+    height: auto;
+    width: calc(11rem + 5vw);
+
 .swal2-html-container {
   max-height: 20rem;
   overflow-y: scroll;
@@ -266,4 +272,5 @@ footer p{
   .swal2-title {
     font-size: 1.5rem !important;
   }
+
 }
