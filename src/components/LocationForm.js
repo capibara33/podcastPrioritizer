@@ -31,7 +31,7 @@ const staticMap = (sessionId) => {
 }
   
   const walking = () => {
-    const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+    const mapQuestURL = new URL(`https://www.mapquestapi.com/directions/v2/route`)
     
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
@@ -52,7 +52,7 @@ const staticMap = (sessionId) => {
   }
     
   const biking = () => {
-    const mapQuestURL = new URL(`http://www.mapquestapi.com/directions/v2/route`)
+    const mapQuestURL = new URL(`https://www.mapquestapi.com/directions/v2/route`)
     
     mapQuestURL.search = new URLSearchParams({
       key: mapQuestKey,
@@ -128,7 +128,6 @@ const staticMap = (sessionId) => {
           <h2>Step 2: Tell us how you want to get there.</h2>
           <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
           <div className="transportIconContainer">
-            
               <button aria-label="transportation method: walk"
               className={highlightWalk && 'highlight'} 
               onClick={()=>{
@@ -167,6 +166,7 @@ const staticMap = (sessionId) => {
             }
           </div>
       </div>
+
 
     </>
   )
