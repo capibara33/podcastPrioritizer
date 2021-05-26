@@ -263,6 +263,8 @@ footer p{
     height: auto;
     width: calc(11rem + 5vw);
 
+}
+
 .swal2-html-container {
   max-height: 20rem;
   overflow-y: scroll;
