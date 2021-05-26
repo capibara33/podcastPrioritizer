@@ -110,10 +110,10 @@ const staticMap = (sessionId) => {
       <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
         <div className="locationInputs">
           <label htmlFor="currentLocation">Current Location:</label>
-          <input required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+          <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
           <label htmlFor="destination">Your Destination:</label>
-          <input required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
+          <input placeholder="1 Blue Jays Way Toronto" required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
         </div>
 
         <div className="locationButtonContainer">

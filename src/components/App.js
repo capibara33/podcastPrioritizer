@@ -10,7 +10,7 @@ import { animateScroll as scroll } from 'react-scroll'
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
-  const [commuteTime, setCommuteTime] = useState(0)
+  const [commuteTime, setCommuteTime] = useState(0);
 
 
   const handlePodcastData = (data) => {

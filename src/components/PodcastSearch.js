@@ -72,9 +72,13 @@ const PodcastSearch = (props) => {
 	return(
 		<section className="wrapper podcastForm">
 			<form action=""className="podcastSearchForm" onSubmit={handleSubmit}>
-				<label htmlFor="podcastSearch" >Search for Podcast Title or Keyword</label>
-				<input type="text" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
-				<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
+				<div className="podcastFormContainer">
+					<label htmlFor="podcastSearch" >Search for Podcast Title or Keyword: </label>
+					<input type="text" placeholder="Corgis, Nicolas cage, Manga" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
+				</div>
+				<div className="podcastButtonContainer">
+					<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
+				</div>
 			</form>
 				<button className="randomPodcastButton" onClick={handleRandomButtonClick}>Random Podcast</button>
 		</section>

@@ -81,6 +81,15 @@ main {
     flex-direction: column;
 }
 
+.locationInputs input,
+.podcastSearchForm input {
+    min-width: 12rem;
+}
+
+.locationInputs label {
+    margin: 0.5rem 0;
+}
+
 .locationForm {
     display: flex;
     flex-direction: row;
@@ -94,7 +103,7 @@ main {
     border: none;
     margin-left: 1rem;
     background-color: #E8EB5E;
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -103,6 +112,10 @@ main {
 .locationButton:focus,
 .podcastButton:focus {
     color: #F97068;
+}
+
+.locationButton {
+    margin-top: 2.1rem
 }
 
 .transportIconContainer {
@@ -121,6 +134,11 @@ main {
     margin: 0;
 }
 
+/* This makes sure the buttons container doesn't get too big */
+.transportationContainer {
+    max-width: 900px;
+}
+
 .transportationContainer p {
     text-align: center;
 }
@@ -135,6 +153,23 @@ main {
     align-items: center;
     justify-content: center;
     margin: 0.5rem auto;
+}
+
+.podcastFormContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.podcastFormContainer label {
+    margin: 0.5rem 0;
+}
+
+.podcastButtonContainer {
+    margin: 1rem 0 0 0;
+}
+
+.podcastButton {
+    margin-top: 0.5rem
 }
 
 .randomPodcastButton,
