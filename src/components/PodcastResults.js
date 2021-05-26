@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+
 import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
 
@@ -28,9 +29,9 @@ const PodcastResults = (props) => {
                                             Swal.fire({
                                                 title: podcastTitle,
                                                 text: episodeDescription,
-                                                time: episodeLengthInSec,
                                                 confirmButtonText: "Return",
-                                                padding:"10px"
+                                                confirmButtonColor: "#F97068",
+                                                padding:"0"
                                             })
                                         }
                                     }>Learn More</button>

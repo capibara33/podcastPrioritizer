@@ -262,4 +262,15 @@ footer p{
     display: block;
     height: auto;
     width: calc(11rem + 5vw);
+
+.swal2-html-container {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+@media (max-width: 400px) {
+  .swal2-title {
+    font-size: 1.5rem !important;
+  }
+
 }
