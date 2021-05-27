@@ -50,10 +50,6 @@ h3 {
     text-align: center;
 }
 
-p {
-    margin: 0.5rem;
-}
-
 img{
     /* border: 5px solid #F97068; */
     border: 5px solid skyblue;
@@ -71,14 +67,14 @@ li {
 }
 
 
-footer{
+footer {
     background-color: #EDF2EF;
     padding: 1rem;
     text-align: center;
     height: 8rem;
 }
 
-footer p{
+footer p {
     margin: 0;
 }
 
@@ -133,9 +129,7 @@ a {
 }
 
 .locationForm {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
@@ -224,13 +218,14 @@ a {
 }
 
 .walkButton:hover,
-.bikeButton:hover{
+.bikeButton:hover,
+.podcastResults,
+.podcastResultsContainer {
     background-color: #F97068;
 }
 
 .mapContainer {
-    display: flex;
-    justify-content: center;
+    align-items: center;
     margin: 1rem 0;
 }
 
@@ -252,9 +247,7 @@ a {
 }
 
 .podcastSearchForm{
-    display: flex;
     align-items: center;
-    justify-content: center;
     margin: 0.5rem auto;
 }
 
@@ -277,7 +270,13 @@ a {
     margin: 0.5rem 0 1rem 0;
 }
 
-.randomPodcastContainer {
+.randomPodcastContainer,
+.podcastSearchForm,
+.podcastResults h2,
+.podcastsList,
+.scrollButtonContainer,
+.mapContainer,
+.locationForm {
     display: flex;
     justify-content: center;
 }
@@ -292,14 +291,8 @@ a {
     border-radius: 15px;
 }
 
-
-
 .resultsTitle{
     padding: 0 2rem;
-}
-
-.podcastResults {
-    background-color: #F97068;
 }
 
 .podcastResults li {
@@ -309,8 +302,6 @@ a {
 
 .podcastResults h2 {
     font-size: 1.3rem;
-    display: flex;
-    justify-content: center;
     padding-top: 1rem;
 }
 
@@ -321,10 +312,6 @@ a {
     padding: 0;
 }
 
-.podcastResultsContainer {
-    background-color: #F97068;
-}
-
 .podcastTitleContainer {
     display: flex;
     flex-direction: row;
@@ -333,7 +320,8 @@ a {
     border-radius: 20px;
 }
 
-.liContainer{
+.liContainer,
+.podcastInfoButtonContainer {
     width: 100%
 }
 
@@ -345,9 +333,7 @@ a {
 
 .podcastsList{
     align-items: center;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .podcastsList li{
@@ -360,7 +346,6 @@ a {
 }
 
 .podcastInfoButtonContainer{
-    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -381,11 +366,6 @@ a {
     font-weight: bolder;
 }
 
-.scrollButtonContainer {
-    display:flex;
-    justify-content: center;
-}
-
 footer p,
 footer img {
     padding: 0.2rem;
@@ -399,12 +379,6 @@ footer img {
 
 .githubLinks a {
     font-weight: bolder;
-}
-
-.mapContainer {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
 }
 
 .giph {
@@ -430,10 +404,13 @@ footer img {
 
 /* MEDIA QUERIES START HERE */
 @media (max-width: 500px) {
-    .locationForm {
-        flex-direction: column;
-    }
+
+    .locationForm,
+    .podcastSearchForm {
+      flex-direction: column;
+  }
 }
+
 
 @media (max-width: 400px) {
     .swal2-title {
@@ -451,25 +428,18 @@ footer img {
         align-items: center;
     }
 
+  .podcastSearchForm input {
+      margin-top: 0.5rem;
+  }
     .locationButton {
         margin-top: 1rem;
         margin-left: 0;
     }
     
-
     .mapResult {
         width: 250px;
         height: 250px;
     }
-
-    .podcastSearchForm {
-        flex-direction: column;
-    }
-
-    .podcastSearchForm input {
-        margin-top: 0.5rem;
-    }
-
     .podcastButton {
         margin-left: 1rem;
     }
@@ -486,8 +456,8 @@ footer img {
         width: 13rem;
     }
 
-    .listennotesLogo {
-        max-width: 12rem;
-    }
+  .listennotesLogo {
+    max-width: 12rem;
+  }
 }
 
