@@ -1,7 +1,7 @@
 // LocationForm.js
-import { FaArrowCircleRight } from 'react-icons/fa';
+import { BiCurrentLocation } from 'react-icons/bi';
 import { useState } from 'react';
-import { FaWalking, FaBicycle } from 'react-icons/fa'
+import { FaWalking, FaBicycle, FaArrowCircleRight} from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 import Giphy from './Giphy.js'
 import Swal from 'sweetalert2'
@@ -105,14 +105,30 @@ const noRoute = () => {
     setDestination(event.target.value)
   }
 
+  // current location 
+
+  const myLocation = () => {
+    const locationFinder = (pos) => {
+      let crd = pos.coords;
+      let currentLocation =`${crd.latitude}, ${crd.longitude}`
+      setLocation(currentLocation)
+    }
+    navigator.geolocation.getCurrentPosition(locationFinder);
+  }
+
   return (
     <>
       <h2>Step 1: Pick a location AND destination to get started.</h2>
       <div className="locationFormContainer">
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
           <div className="locationInputs">
-            <label htmlFor="currentLocation">Current Location:</label>
-            <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+
+            <div className="currentLocation">
+              <label htmlFor="currentLocation">Current Location:</label>
+              <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+
+              <button className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
+            </div>
 
             <label htmlFor="destination">Your Destination:</label>
             <input placeholder="1 Blue Jays Way Toronto" required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
