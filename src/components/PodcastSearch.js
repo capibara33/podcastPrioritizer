@@ -1,5 +1,7 @@
 import { FaArrowCircleRight } from 'react-icons/fa';
 import { useState } from 'react'
+import { animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const PodcastSearch = (props) => {
 	const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
@@ -67,15 +69,15 @@ const PodcastSearch = (props) => {
 		{commuteTime === 0 ? '' : 
 		<>
 			<h2>Step 3: Search for Podcast Title or Keyword.</h2>
-			<form action=""className="podcastSearchForm" onSubmit={handleSubmit}>
+			<form action=""className="podcastSearchForm" >
 				<label htmlFor="podcastSearch" aria-label="Step 3: Search for Podcast Title or Keyword."></label>
 				<input type="text" placeholder="Corgis, Nicolas cage, Manga" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
 				<div className="podcastButtonContainer">
-					<button className="podcastButton" type="submit"><FaArrowCircleRight /></button>
+          <Link to="results" smooth={true} delay={400}> <button className="podcastButton" type="submit" onClick={handleSubmit}><FaArrowCircleRight /></button></Link>
 				</div>
 			</form>
 				<div className="randomPodcastContainer">
-					<button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion?</button>
+        <Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
 				</div>
 		</>
 		}
