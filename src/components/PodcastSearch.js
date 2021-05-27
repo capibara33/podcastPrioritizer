@@ -63,9 +63,11 @@ const PodcastSearch = (props) => {
 		selectRandomSearch(suggestedUserSearch);
 	}
 	
-
+	// THIS SECTION IS STEP 3
 	return(
 		<section className="wrapper podcastForm">
+		{commuteTime === 0 ? '' : 
+		<>
 			<h2>Step 3: Search for Podcast Title or Keyword.</h2>
 			<form action=""className="podcastSearchForm" >
 				<label htmlFor="podcastSearch" aria-label="Step 3: Search for Podcast Title or Keyword."></label>
@@ -77,6 +79,8 @@ const PodcastSearch = (props) => {
 				<div className="randomPodcastContainer">
         <Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
 				</div>
+		</>
+		}
 		</section>
 	)
 }

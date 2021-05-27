@@ -4,8 +4,6 @@ import LandingPage from './LandingPage';
 import LocationForm from './LocationForm';
 import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
-// import { animateScroll as scroll } from 'react-scroll';
-// import listennotesLogo from '../assets/listennotesLogo.png';
 
 
 function App() {
@@ -20,10 +18,6 @@ function App() {
   const handleCommuteTime = (time) => {
     setCommuteTime(time)
   }
-  
-  // const toTop = () => {
-  //   scroll.scrollToTop();
-  // }
 
   return (
     
@@ -36,9 +30,6 @@ function App() {
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
-      {/* <div className="wrapper scrollButtonContainer">
-        <button className="scrollToTop" onClick={ toTop }>Scroll to top</button>
-      </div> */}
 
       <footer>
         <p className="githubLinks">
