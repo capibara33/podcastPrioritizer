@@ -263,7 +263,7 @@ a {
 }
 
 .podcastButtonContainer {
-    margin: 1rem 0 0 0;
+    margin: 1rem 1rem 0 0;
 }
 
 .podcastButton {
@@ -323,7 +323,6 @@ a {
 
 .podcastResultsContainer {
     background-color: #F97068;
-    /* background-color: #E8EB5E; */
 }
 
 .podcastTitleContainer {
@@ -430,6 +429,40 @@ footer img {
 }
 
 /* MEDIA QUERIES START HERE */
+@media (max-width: 500px) {
+    .locationForm {
+      flex-direction: column;
+  }
+
+  .locationButtonContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .locationButton {
+      margin-top: 1rem;
+      margin-left: 0;
+  }
+
+  .mapResult {
+      width: 250px;
+      height: 250px;
+  }
+
+  .podcastSearchForm {
+      flex-direction: column;
+  }
+
+  .podcastSearchForm input {
+      margin-top: 0.5rem;
+  }
+
+  .podcastButton {
+      margin-left: 1rem;
+  }
+}
+
 
 @media (max-width: 400px) {
   .swal2-title {
@@ -443,40 +476,6 @@ footer img {
 
     .listennotesLogo {
         max-width: 12rem;
-    }
-}
-
-@media (max-width: 350px) {
-    .locationForm {
-        flex-direction: column;
-    }
-
-    .locationButtonContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .locationButton {
-        margin-top: 1rem;
-        margin-left: 0;
-    }
-
-    .mapResult {
-        width: 300px;
-        height: 300px;
-    }
-
-    .podcastSearchForm {
-        flex-direction: column;
-    }
-
-    .podcastSearchForm input {
-        margin-top: 0.5rem;
-    }
-
-    .podcastButton {
-        margin-left: 1rem;
     }
 }
 
