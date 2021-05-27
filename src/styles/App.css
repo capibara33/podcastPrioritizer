@@ -67,14 +67,14 @@ li {
 }
 
 
-footer{
+footer {
     background-color: #EDF2EF;
     padding: 1rem;
     text-align: center;
     height: 8rem;
 }
 
-footer p{
+footer p {
     margin: 0;
 }
 
@@ -227,7 +227,7 @@ a {
 .mapContainer {
     align-items: center;
     margin: 1rem 0;
-  }
+}
 
 .mapResult {
     width: 400px;
@@ -390,8 +390,8 @@ footer img {
 }
 
 .swal2-html-container {
-  max-height: 15rem;
-  overflow-y: scroll;
+    max-height: 15rem;
+    overflow-y: scroll;
 }
 
 .scrollToTop {
@@ -404,46 +404,57 @@ footer img {
 
 /* MEDIA QUERIES START HERE */
 @media (max-width: 500px) {
+
     .locationForm,
     .podcastSearchForm {
       flex-direction: column;
-  }
-
-  .locationButtonContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .locationButton {
-      margin-top: 1rem;
-      margin-left: 0;
-  }
-
-  .mapResult {
-      width: 250px;
-      height: 250px;
-  }
-
-  .podcastSearchForm input {
-      margin-top: 0.5rem;
-  }
-
-  .podcastButton {
-      margin-left: 1rem;
   }
 }
 
 
 @media (max-width: 400px) {
-  .swal2-title {
+    .swal2-title {
     font-size: 1.5rem !important;
-  }
+    }
 
-  .locationInputs input,
-  .podcastSearchForm input {
+    .locationInputs input,
+    .podcastSearchForm input {
     width: 13rem;
+    }
+
+    .locationButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  .podcastSearchForm input {
+      margin-top: 0.5rem;
   }
+    .locationButton {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .mapResult {
+        width: 250px;
+        height: 250px;
+    }
+    .podcastButton {
+        margin-left: 1rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .swal2-title {
+        font-size: 1.5rem !important;
+    }
+
+    .locationInputs input,
+    .podcastSearchForm input {
+        width: 13rem;
+    }
 
   .listennotesLogo {
     max-width: 12rem;
