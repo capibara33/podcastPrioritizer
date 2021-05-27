@@ -33,6 +33,7 @@ h1 {
     font-size: 3rem;
     text-align: center;
     margin: 0;
+    padding: 1rem;
 }
 
 h2 {
@@ -44,6 +45,11 @@ h3{
     margin: 1rem 0;
     text-align: center;
 }
+
+p {
+  margin: 0.5rem;
+}
+
 img{
     /* border: 5px solid #F97068; */
     border: 5px solid skyblue;
@@ -111,7 +117,10 @@ a {
 
 .locationInputs input,
 .podcastSearchForm input {
-    min-width: 12rem;
+    width: 18rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #F97068;
+    border-radius: 0.3rem;
 }
 
 .locationInputs label {
@@ -227,6 +236,7 @@ a {
 .podcastForm h2 {
     text-align: center;
     font-size: 1rem;
+    margin: 0;
 }
 
 .podcastSearchForm{
@@ -278,12 +288,10 @@ a {
 
 .podcastResults {
     background-color: #F97068;
-    border: 2px solid #F97068;
 }
 
 .podcastResults li {
     background-color: #EDF2EF;
-    border: 2px solid #F97068;
     border-radius: 20px;
 }
 
@@ -291,6 +299,7 @@ a {
     font-size: 1.3rem;
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
 }
 
 .podcastResults h3{
@@ -413,6 +422,11 @@ footer img {
 @media (max-width: 400px) {
   .swal2-title {
     font-size: 1.5rem !important;
+  }
+
+  .locationInputs input,
+  .podcastSearchForm input {
+    width: 13rem;
   }
 }
 
