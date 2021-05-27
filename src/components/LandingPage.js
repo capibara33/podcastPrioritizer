@@ -1,4 +1,5 @@
 const LandingPage = () => {
+
     return (
         <header>
                 <h1>Podcast Prioritizer</h1>
@@ -6,10 +7,7 @@ const LandingPage = () => {
                     <h2 className="wrapper">Welcome to Podcast Prioritizer. We want to find you a podcast that best suits your commute time.</h2>
                 </div>
         </header>
-        
     )
 }
-
-
 
 export default LandingPage;
