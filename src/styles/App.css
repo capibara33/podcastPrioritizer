@@ -433,24 +433,23 @@ footer a {
 
 /* For desktop screens */
 @media (min-width: 700px) {
-
-  .podcastImage {
+    .podcastImage {
     height: 200px;
     width: 200px;
-  }
+    }
 
-  .podcastResults h2 {
+    .podcastResults h2 {
     font-size: 2rem;
     padding-top: 2rem;
   }
 
-  .resultsTitle {
+    .resultsTitle {
     font-size: 1.4rem;
-  }
+    }
 
-  .podcastInfoContainer {
+    .podcastInfoContainer {
     font-size: 1rem;
-  }
+    }
 }
 
 /* For most phone sizes */
