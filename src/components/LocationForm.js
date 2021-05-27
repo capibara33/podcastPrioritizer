@@ -129,7 +129,7 @@ const noRoute = () => {
               <label htmlFor="currentLocation">Current Location:</label>
               <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
-              <button className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
+              <button type="button" className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
             </div>
 
             <label htmlFor="destination">Your Destination:</label>
