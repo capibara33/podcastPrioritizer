@@ -1,5 +1,5 @@
 // import useState hook and fragment from react
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 // import arrow icon
 import { FaArrowCircleRight } from 'react-icons/fa';
 import { Link } from 'react-scroll';

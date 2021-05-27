@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
 
 
-const PodcastResults = ({ props }) => {
+const PodcastResults = (props) => {
   // destructured the props
   const { podcastInfo } = props
 
