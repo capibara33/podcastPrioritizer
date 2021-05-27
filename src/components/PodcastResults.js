@@ -5,24 +5,22 @@ import timeConverter from '../utilities/timeConverter.js';
 import { animateScroll as scroll } from 'react-scroll';
 
 const PodcastResults = (props) => {
-    const {podcastInfo} = props
+    const { podcastInfo } = props
 
     const toTop = () => {
         scroll.scrollToTop();
     }
 
-    console.log(podcastInfo)
-
     return (
+        // THIS SECTION IS STEP 4
         <section className="podcastResults">
             {/* This ternary allows the h2 to append if the array is not empty */}
             {podcastInfo.length !== 0 && <h2> Step 4: Profit</h2>}
-
-            {/* This ternary maps through the podcast components when it receives information from the podcast form */}
-            {podcastInfo ? podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio}, index)=>{
-                return(
-                    <div className="wrapper podcastResultsContainer">
-                        <ul className="podcastsList">
+            <div className="wrapper podcastResultsContainer">
+                <ul className="podcastsList">
+                    {/* This ternary maps through the podcast components when it receives data from the podcast form */}
+                    {podcastInfo ? podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio }, index) => {
+                        return (
                             <li key={index}>
                                 <div className="liContainer">
                                     <div className="podcastTitleContainer">
@@ -40,24 +38,24 @@ const PodcastResults = (props) => {
                                                 text: episodeDescription,
                                                 confirmButtonText: "Return",
                                                 confirmButtonColor: "#F97068",
-                                                padding:"0"
+                                                padding: "0"
                                             })
                                         }
-                                    }>Learn More</button>
-                                <a className="listenLink" aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio} rel="noreferrer">Listen Here <FiExternalLink /> </a>
+                                        }>Learn More</button>
+                                        <a className="listenLink" aria-label={`External link to audio of ${episodeTitle}`} target="_blank" href={episodeAudio} rel="noreferrer">Listen Here <FiExternalLink /> </a>
 
                                     </div>
                                 </div>
                             </li>
-                        </ul>
-                    </div> 
-                ) 
-            })
-            // this is the end of ternary - if there is no podcast, an empty <p> tag will take its place
-            : <p></p>
-            }
+                        )
+                    })
+                        // this is the end of ternary - if there is no podcast, an empty <p> tag will take its place
+                        : <p></p>
+                    }
+                </ul>
+            </div>
             <div className="wrapper scrollButtonContainer">
-                <button className="scrollToTop" onClick={ toTop }>Scroll to top</button>
+                <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
             </div>
         </section>
     )
