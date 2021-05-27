@@ -182,7 +182,9 @@ a {
     text-align: center;
 }
 
-.transportationContainer p {
+.stepOneNote,
+.stepTwoNote,
+.stepThreeNote {
     text-align: center;
     font-size: 0.8rem;
 }
@@ -231,6 +233,7 @@ a {
 .mapContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 1rem 0;
   }
 
@@ -399,12 +402,6 @@ footer img {
 
 .githubLinks a {
     font-weight: bolder;
-}
-
-.mapContainer {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
 }
 
 .giph {

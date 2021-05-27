@@ -107,6 +107,7 @@ const noRoute = () => {
   return (
     <>
       <h2>Step 1: Pick a location AND destination to get started.</h2>
+      <p className="stepOneNote">*** Add a city to the end of each address for specificity ***</p>
       <div className="locationFormContainer">
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
           <div className="locationInputs">
@@ -126,7 +127,7 @@ const noRoute = () => {
       {walkResponse.length === 0 ? '' :
         <div className="wrapper transportationContainer">
             <h2>Step 2: Tell us how you want to get there.</h2>
-            <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
+            <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement***</p>
             <div className="transportIconContainer">
               <button aria-label="transportation method: walk"
                 onClick={()=>{
