@@ -176,7 +176,9 @@ a {
     text-align: center;
 }
 
-.transportationContainer p {
+.stepOneNote,
+.stepTwoNote,
+.stepThreeNote {
     text-align: center;
     font-size: 0.8rem;
 }
@@ -247,6 +249,8 @@ a {
 }
 
 .mapContainer {
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin: 1rem 0;
 }
@@ -313,8 +317,8 @@ a {
     border-radius: 15px;
 }
 
-.resultsTitle{
-    padding: 0 2rem;
+.podcastResults {
+    background-color: #F97068;
 }
 
 .podcastResults li {
@@ -327,11 +331,11 @@ a {
     padding-top: 1rem;
 }
 
-.podcastResults h3{
+.resultsTitle{
     font-size: 1.1rem;
     text-align: center;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 2rem;
 }
 
 .podcastTitleContainer {
@@ -425,7 +429,36 @@ footer div a {
     margin: 0.5rem 0 1rem 0;
 }
 
-/* MEDIA QUERIES START HERE */
+/* -------------- MEDIA QUERIES START HERE -------------- */
+
+/* For desktop screens */
+@media (min-width: 700px) {
+  .podcastResultsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .podcastImage {
+    height: 200px;
+    width: 200px;
+  }
+
+  .podcastResults h2 {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+
+  .resultsTitle {
+    font-size: 1.4rem;
+  }
+
+  .podcastInfoContainer {
+    font-size: 1rem;
+  }
+}
+
+/* For most phone sizes */
 @media (max-width: 500px) {
 
     .locationForm,
@@ -468,7 +501,7 @@ footer div a {
     }
 }
 
-
+/* For smaller phone sizes */
 @media (max-width: 400px) {
     .swal2-title {
         font-size: 1.5rem !important;
@@ -483,4 +516,5 @@ footer div a {
     max-width: 12rem;
   }
 }
+
 
