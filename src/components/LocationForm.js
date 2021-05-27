@@ -46,7 +46,6 @@ const staticMap = (sessionId) => {
       const routeObject = jsonResponse.route;
       setWalkResponse(routeObject)
     })
-
   }
     
   const biking = () => {
@@ -102,16 +101,17 @@ const staticMap = (sessionId) => {
         </form>
       </div>
 
-      <div className="wrapper transportationContainer">
-          <h2>Step 2: Tell us how you want to get there.</h2>
-          <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
-          <div className="transportIconContainer">
+      {walkResponse.length === 0 ? '' :
+        <div className="wrapper transportationContainer">
+            <h2>Step 2: Tell us how you want to get there.</h2>
+            <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
+            <div className="transportIconContainer">
               <button aria-label="transportation method: walk"
-              onClick={()=>{
+                onClick={()=>{
                 handleCommuteTime(walkResponse.realTime);
                 staticMap(walkResponse.sessionId);
                 }}>
-                
+                  
                 <FaWalking />
                 <p>Time: {timeConverter(walkResponse.realTime)}</p>
 
@@ -132,18 +132,16 @@ const staticMap = (sessionId) => {
                 ? <p>Distance {(bikeResponse.distance).toFixed(1)} km</p>
                 : <p>Distance:</p> 
                 }
-              
               </button>
-          </div>
-          <div className="mapContainer">
-            {mapResults 
-              ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
-              : <Giphy />
-            }
-          </div>
+            </div>
+        </div>
+      }
+      <div className="mapContainer">
+        {mapResults 
+          ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
+          : <Giphy />
+        }
       </div>
-
-
     </>
   )
 }
