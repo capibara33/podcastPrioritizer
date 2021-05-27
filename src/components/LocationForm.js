@@ -82,6 +82,7 @@ const staticMap = (sessionId) => {
     setDestination(event.target.value)
   }
 
+  // THIS SECTION IS STEP 1
   return (
     <>
       <h2>Step 1: Pick a location AND destination to get started.</h2>

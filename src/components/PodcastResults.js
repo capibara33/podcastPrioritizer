@@ -11,9 +11,8 @@ const PodcastResults = (props) => {
         scroll.scrollToTop();
     }
 
-    console.log(podcastInfo)
-
     return (
+        // THIS SECTION IS STEP 4
         <section className="podcastResults">
             {/* This ternary allows the h2 to append if the array is not empty */}
             {podcastInfo.length !== 0 && <h2> Step 4: Profit</h2>}

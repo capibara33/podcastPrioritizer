@@ -6,7 +6,6 @@ import PodcastSearch from './PodcastSearch';
 import PodcastResults from './PodcastResults';
 
 
-
 function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [commuteTime, setCommuteTime] = useState(0);
@@ -19,7 +18,6 @@ function App() {
   const handleCommuteTime = (time) => {
     setCommuteTime(time)
   }
-  
 
   return (
     
@@ -32,7 +30,6 @@ function App() {
         <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
         <PodcastResults podcastInfo={podcasts} />
       </main>
-      
 
       <footer>
         <p className="githubLinks">
