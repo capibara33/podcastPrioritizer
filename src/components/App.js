@@ -45,6 +45,7 @@ function App() {
 
         <p>Made @ <a href="https://junocollege.com/">Juno College </a>2021</p>
 
+        <div>Favicon made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         <img src={process.env.PUBLIC_URL + 'listennotesLogo.png'} alt="powered by listen notes logo" className="listennotesLogo"/> 
       </footer>
 
