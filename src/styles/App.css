@@ -41,7 +41,11 @@ h2 {
     text-align: center;
 }
 
-h3{
+p {
+    margin: 0.5rem;
+}
+
+h3 {
     margin: 1rem 0;
     text-align: center;
 }
@@ -182,8 +186,19 @@ a {
     font-size: 0.8rem;
 }
 
-.transportationContainer button:focus {
+.transportationContainer button:focus,
+.transportationContainer button:hover {
+    background-color: #EFC88B;
+    border: 0.2rem double #F97068;
+}
+
+.transportIconContainer button{
+    flex-basis: 35%;
+    padding: 0.5rem 0;
     background-color: #F97068;
+    border-radius: 0.3rem;
+    border: 0.2rem double #EFC88B;
+    cursor: pointer;    
 }
 
 .transportIconContainer {
@@ -192,10 +207,6 @@ a {
     font-size: 2rem;
 }
 
-.transportIconContainer button{
-    flex-basis: 35%;
-    padding: 0.5rem 0;
-}
 
 .transportIconContainer button:nth-of-type(1) {
     margin-right: 0.5rem;
@@ -400,7 +411,7 @@ footer img {
     border: 0;
     display: block;
     height: auto;
-    width: calc(11rem + 5vw);
+    width: calc(11rem + 4vw);
 
 }
 
