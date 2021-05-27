@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FaWalking, FaBicycle } from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 import Giphy from './Giphy.js'
+import Swal from 'sweetalert2'
 
 
 const LocationForm = ({handleCommuteTime}) => {
@@ -27,6 +28,16 @@ const staticMap = (sessionId) => {
   setMapResult(staticURL)
   }
 }
+
+const noRoute = () => {
+  Swal.fire({
+    title: 'No route found',
+    text: 'Route does not exist, try to be more specific',
+    confirmButtonText: "Return",
+    confirmButtonColor: "#F97068",
+    padding: "0"
+  })
+}
   
   const walking = () => {
     const mapQuestURL = new URL(`https://www.mapquestapi.com/directions/v2/route`)
@@ -44,7 +55,12 @@ const staticMap = (sessionId) => {
     })
     .then((jsonResponse) => {
       const routeObject = jsonResponse.route;
-      setWalkResponse(routeObject)
+
+      if (routeObject.distance === 0) {
+        noRoute();
+      } else {
+        setWalkResponse(routeObject);
+      }
     })
   }
     
@@ -64,7 +80,13 @@ const staticMap = (sessionId) => {
     })
     .then((jsonResponse) => {
       const routeObject = jsonResponse.route;
-      setBikeResponse(routeObject)
+      console.log(routeObject.distance);
+      
+      if (routeObject.distance === 0) {
+        noRoute();
+      } else {
+        setBikeResponse(routeObject);
+      }
     })
   }
       
@@ -83,7 +105,6 @@ const staticMap = (sessionId) => {
     setDestination(event.target.value)
   }
 
-  // THIS SECTION IS STEP 1
   return (
     <>
       <h2>Step 1: Pick a location AND destination to get started.</h2>

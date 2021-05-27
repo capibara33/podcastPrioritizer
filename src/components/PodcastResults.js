@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2';
-
 import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
 import { animateScroll as scroll } from 'react-scroll';
@@ -12,8 +11,8 @@ const PodcastResults = (props) => {
     }
 
     return (
-        // THIS SECTION IS STEP 4
-        <section className="podcastResults">
+
+        <section className="podcastResults" name="results" id="results">
             {/* This ternary allows the h2 to append if the array is not empty */}
             {podcastInfo.length !== 0 && <h2> Step 4: Profit</h2>}
             <div className="wrapper podcastResultsContainer">
