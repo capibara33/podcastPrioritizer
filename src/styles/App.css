@@ -137,6 +137,7 @@ a {
 .podcastButton {
   border: none;
   margin-left: 1rem;
+  padding: 0;
   background-color: #E8EB5E;
   font-size: 2rem;
 }
@@ -277,7 +278,7 @@ a {
 }
 
 .podcastButtonContainer {
-  margin: 1rem 1rem 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .podcastButton {
