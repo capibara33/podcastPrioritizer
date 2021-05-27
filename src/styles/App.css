@@ -223,8 +223,30 @@ a {
     margin: 0;
 }
 
+.currentLocation {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.myLocation {
+    height: 2rem;
+    border: none;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 0;
+}
+
+.myLocation:hover {
+    color: #F97068;
+}
+
 .walkButton:hover,
-.bikeButton:hover{
+.bikeButton:hover {
     background-color: #F97068;
 }
 
@@ -291,8 +313,6 @@ a {
     width: 125px;
     border-radius: 15px;
 }
-
-
 
 .resultsTitle{
     padding: 0 2rem;
