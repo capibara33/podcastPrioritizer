@@ -1,5 +1,5 @@
 const LandingPage = () => {
-
+    // render the header 
     return (
         <header>
                 <h1>Podcast Prioritizer</h1>

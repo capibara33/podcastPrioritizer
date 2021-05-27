@@ -4,150 +4,150 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 *, *:before, *:after {box-sizing: inherit}
 
-.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+.srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 @import url('https://fonts.googleapis.com/css2?family=Judson&family=Lato:wght@300&display=swap');
 
-/* Brand Colours
-Yellow: #E8EB5E
-Pale Grey: #EDF2EF
-Light Red: #F97068 */
-/* Gold Croyola: #EFC88B */
-
 html {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
-    background-color: #E8EB5E;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  background-color: #E8EB5E;
 }
 
 .content {
     min-height: calc(100vh - 15rem);
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Judson', serif;
+}
+
 h1 {
-    font-family: 'Judson', serif;
-    font-size: 3rem;
-    text-align: center;
-    margin: 0;
-    padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
 }
 
 h2 {
-    font-size: 1rem;
-    text-align: center;
-}
-
-p {
-    margin: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 h3 {
-    margin: 1rem 0;
-    text-align: center;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+p {
+  margin: 0.5rem;
 }
 
 img{
-    /* border: 5px solid #F97068; */
-    border: 5px solid skyblue;
-    border-radius: 30px;
+  border: 5px solid skyblue;
+  border-radius: 30px;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    margin: 0 auto;
-    list-style: none;
-    width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  width: 100%;
 }
 
-
 footer {
-    background-color: #EDF2EF;
-    padding: 1rem;
-    text-align: center;
-    height: 15rem;
+  background-color: #EDF2EF;
+  padding-top: 1rem;
+  text-align: center;
+  height: 15rem;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
 }
 
 .wrapper {
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 
 header,
 main {
-    background-color: #E8EB5E;
+  background-color: #E8EB5E;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
+
 .locationFormContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 
 .instructionsContainer {
-    background-color: #F97068;
+  background-color: #F97068;
 }
 
 .instructionsContainer h2 {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 
 .locationInputs {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .locationInputs input,
 .podcastSearchForm input {
-    width: 18rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid #F97068;
-    border-radius: 0.3rem;
+  width: 18rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #F97068;
+  border-radius: 0.3rem;
 }
 
 .locationInputs label {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .locationForm {
-    flex-direction: row;
-    align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 
 .locationButton,
 .podcastButton {
-    border: none;
-    margin-left: 1rem;
-    background-color: #E8EB5E;
-    font-size: 2rem;
+  border: none;
+  margin-left: 1rem;
+  padding: 0;
+  background-color: #E8EB5E;
+  font-size: 2rem;
 }
 
 .locationButton:hover,
 .podcastButton:hover, 
 .locationButton:focus,
 .podcastButton:focus {
-    color: #F97068;
-    cursor: pointer;
+  color: #F97068;
+  cursor: pointer;
 }
 
 .randomPodcastButton:hover,
@@ -158,142 +158,138 @@ a {
 .listenLink:focus,
 .scrollToTop:hover,
 .scrollToTop:focus {
-    background-color: #EFC88B;
-    cursor: pointer;
+  background-color: #EFC88B;
+  cursor: pointer;
 }
 
 .locationButton {
-    margin-top: 2.1rem
+  margin-top: 2.1rem
 }
 
 /* This makes sure the buttons container doesn't get too big */
 .transportationContainer {
-    max-width: 900px;
-    margin-top: 2rem;
+  max-width: 900px;
+  margin-top: 2rem;
 }
 
 .transportationContainer h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .stepOneNote,
 .stepTwoNote,
 .stepThreeNote {
-    text-align: center;
-    font-size: 0.8rem;
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .transportationContainer button:focus,
 .transportationContainer button:hover {
-    background-color: #EFC88B;
-    border: 0.2rem double #F97068;
+  background-color: #EFC88B;
+  border: 0.2rem double #F97068;
 }
 
 .transportIconContainer button{
-    flex-basis: 35%;
-    padding: 0.5rem 0;
-    background-color: #F97068;
-    border-radius: 0.3rem;
-    border: 0.2rem double #EFC88B;
-    cursor: pointer;    
+  flex-basis: 35%;
+  padding: 0.5rem 0;
+  background-color: #F97068;
+  border-radius: 0.3rem;
+  border: 0.2rem double #EFC88B;
+  cursor: pointer;    
 }
 
 .transportIconContainer {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
 }
 
 
 .transportIconContainer button:nth-of-type(1) {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .transportIconContainer button:nth-of-type(2) {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .transportIconContainer p {
-    font-size: 0.6rem;
-    line-height: 15px;
-    margin: 0;
+  font-size: 0.6rem;
+  line-height: 15px;
+  margin: 0;
 }
 
 .currentLocation {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .myLocation {
-    height: 2rem;
-    border: none;
-    position: absolute;
-    bottom: 0.1rem;
-    right: 0.1rem;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 1.8rem;
-    padding: 0;
+  height: 2rem;
+  border: none;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 0;
 }
 
 .myLocation:hover {
-    color: #F97068;
+  color: #F97068;
 }
 
 .walkButton:hover,
 .bikeButton:hover,
 .podcastResults,
 .podcastResultsContainer {
-    background-color: #F97068;
+  background-color: #F97068;
 }
 
 .mapContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 .mapResult {
-    width: 400px;
-    height: 400px;
-    max-width: 400px;
-    max-height: 400px;
+  width: 435px;
+  height: 435px;
 }
 
 .podcastForm {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .podcastForm h2 {
-    text-align: center;
-    font-size: 1rem;
-    margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .podcastSearchForm{
-    align-items: center;
-    margin: 0.5rem auto;
+  align-items: center;
+  margin: 0.5rem auto;
 }
 
 .podcastSearchForm input {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .podcastButtonContainer {
-    margin: 1rem 1rem 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .podcastButton {
-    margin-top: 0.5rem
+  margin-top: 0.5rem
 }
 
 .randomPodcastButton {
-    background-color: #F97068;
-    border: none;
-    box-shadow: 2px 2px 2px #333;
-    margin: 0.5rem 0 1rem 0;
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .randomPodcastContainer,
@@ -303,217 +299,204 @@ a {
 .scrollButtonContainer,
 .mapContainer,
 .locationForm {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .randomPodcastButton {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .podcastImage {
-    height: 125px;
-    width: 125px;
-    border-radius: 15px;
+  height: 125px;
+  width: 125px;
+  border-radius: 15px;
 }
 
 .podcastResults {
-    background-color: #F97068;
+  background-color: #F97068;
 }
 
 .podcastResults li {
-    background-color: #EDF2EF;
-    border-radius: 20px;
+  background-color: #EDF2EF;
+  border-radius: 20px;
 }
 
 .podcastResults h2 {
-    font-size: 1.3rem;
-    padding-top: 1rem;
+  font-size: 1.3rem;
+  padding-top: 1rem;
 }
 
 .resultsTitle{
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .podcastTitleContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #E8EB5E;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #E8EB5E;
+  border-radius: 20px;
 }
 
 .liContainer,
 .podcastInfoButtonContainer {
-    width: 100%
+  width: 100%
 }
 
 .podcastInfoContainer {
-    display: flex;
-    flex-direction: column;
-    max-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 20rem;
 }
 
 .podcastsList{
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 .podcastsList li{
-    display: flex;
-    margin-bottom: 1rem;
+  display: flex;
+  margin-bottom: 1rem;
 }
 
 .podcastsList p{
-    padding: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem 0 0 0.5rem;
 }
 
 .podcastInfoButtonContainer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .learnMoreButton, 
 .listenLink {
-    background-color: #F97068;
-    border: none;
-    box-shadow: 2px 2px 2px #333;
-    margin: 1rem 0;
-    padding: 0.5rem;
-    text-decoration: none;
-    color: black;
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
 }
 
 .listenLink {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 footer p,
 footer img,
 footer div {
-    padding: 0.2rem;
+  padding: 0.2rem;
 }
 
 
 .listennotesLogo {
-    max-width: 16rem;
-    border: none;
+  max-width: 16rem;
+  border: none;
 }
 
 footer a {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .giph {
-    border: 0;
-    display: block;
-    height: auto;
-    width: calc(11rem + 4vw);
-
+  border: 0;
+  display: block;
+  height: auto;
+  width: calc(11rem + 4vw);
 }
 
+/* To target text in Sweet Alert pop-up when user clicks on "Learn More" button */
 .swal2-html-container {
-    max-height: 15rem;
-    overflow-y: scroll;
+  max-height: 15rem;
+  overflow-y: scroll;
 }
 
 .scrollToTop {
-    padding: 0.5rem 2rem;
-    background-color: #F97068;
-    border: none;
-    box-shadow: 2px 2px 2px #333;
-    margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem 2rem;
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 0.5rem 0 1rem 0;
 }
 
 /* -------------- MEDIA QUERIES START HERE -------------- */
 
 /* For desktop screens */
 @media (min-width: 700px) {
-    .podcastImage {
+  .podcastImage {
     height: 200px;
     width: 200px;
-    }
+  }
 
-    .podcastResults h2 {
+  .podcastResults h2 {
     font-size: 2rem;
     padding-top: 2rem;
   }
 
-    .resultsTitle {
+  .resultsTitle {
     font-size: 1.4rem;
-    }
+  }
 
-    .podcastInfoContainer {
+  .podcastInfoContainer {
     font-size: 1rem;
-    }
+  }
 }
 
 /* For most phone sizes */
 @media (max-width: 500px) {
-
-    .locationForm,
-    .podcastSearchForm {
-      flex-direction: column;
+  .locationForm,
+  .podcastSearchForm {
+    flex-direction: column;
   }
 }
 
 
 @media (max-width: 400px) {
-    .swal2-title {
+  /* This is to override the styling on the Sweet Alert plug-in to resize header text  */
+  .swal2-title {
     font-size: 1.5rem !important;
-    }
+  }
 
-    .locationInputs input,
-    .podcastSearchForm input {
+  .locationInputs input,
+  .podcastSearchForm input {
     width: 13rem;
-    }
+  }
 
-    .locationButtonContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .locationButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .podcastSearchForm input {
-      margin-top: 0.5rem;
+    margin-top: 0.5rem;
   }
-    .locationButton {
-        margin-top: 1rem;
-        margin-left: 0;
-    }
-    
-    .mapResult {
-        width: 250px;
-        height: 250px;
-    }
-    .podcastButton {
-        margin-left: 1rem;
-    }
-}
 
-/* For smaller phone sizes */
-@media (max-width: 400px) {
-    .swal2-title {
-        font-size: 1.5rem !important;
-    }
-
-    .locationInputs input,
-    .podcastSearchForm input {
-        width: 13rem;
-    }
-
+  .locationButton {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+  
+  .mapResult {
+    width: 250px;
+    height: 250px;
+  }
+  .podcastButton {
+    margin-left: 1rem;
+  }
+  
   .listennotesLogo {
     max-width: 12rem;
   }
 }
 
-/* @media (max-height: 1000px) */
-
-/* STYLING FOR ANIMATION PURPOSES */
+/* STYLING FOR ANIMATION PURPOSES ONLY*/
 
 .fadeIn {
   animation: fadeIn 2000ms ease 1;

@@ -1,10 +1,18 @@
+// import sweet alert
 import Swal from 'sweetalert2';
+// import external link icon 
 import { FiExternalLink } from 'react-icons/fi';
+// import time converter function from utilities folder
 import timeConverter from '../utilities/timeConverter.js';
 
-const PodcastResults = (props) => {
-    const { podcastInfo } = props
 
+const PodcastResults = (props) => {
+  // destructured the props
+  const { podcastInfo } = props
+
+
+ 
+// render podcast results section
     return (
         <section className="podcastResults" name="results" id="results">
             {/* This ternary allows the h2 to append if the array is not empty */}
