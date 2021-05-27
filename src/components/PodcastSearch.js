@@ -66,19 +66,20 @@ const PodcastSearch = (props) => {
 	return(
 		<section className="wrapper podcastForm">
 		{commuteTime === 0 ? '' : 
-		<>
-			<h2>Step 3: Search for Podcast Title or Keyword.</h2>
-			<form action=""className="podcastSearchForm" >
+		<div className="fadeIn">
+			<h2>Step 3: Search for Podcast by title, genre, or topic.</h2>
+			<p className="stepThreeNote">*** Commutes longer than five hours may affect podcast results ***</p>
+			<form action=""className="podcastSearchForm">
 				<label htmlFor="podcastSearch" aria-label="Step 3: Search for Podcast Title or Keyword."></label>
 				<input type="text" placeholder="Corgis, Nicolas cage, Manga" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
 				<div className="podcastButtonContainer">
-          <Link to="results" smooth={true} delay={400}> <button className="podcastButton" type="submit" onClick={handleSubmit}><FaArrowCircleRight /></button></Link>
+					<Link to="results" smooth={true} delay={400}> <button className="podcastButton" type="submit" onClick={handleSubmit}><FaArrowCircleRight /></button></Link>
 				</div>
 			</form>
 				<div className="randomPodcastContainer">
-        <Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
+					<Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
 				</div>
-		</>
+		</div>
 		}
 		</section>
 	)

@@ -1,7 +1,7 @@
 // LocationForm.js
-import { FaArrowCircleRight } from 'react-icons/fa';
+import { BiCurrentLocation } from 'react-icons/bi';
 import { useState } from 'react';
-import { FaWalking, FaBicycle } from 'react-icons/fa'
+import { FaWalking, FaBicycle, FaArrowCircleRight} from 'react-icons/fa'
 import timeConverter from '../utilities/timeConverter.js'
 import Giphy from './Giphy.js'
 import Swal from 'sweetalert2'
@@ -80,7 +80,6 @@ const noRoute = () => {
     })
     .then((jsonResponse) => {
       const routeObject = jsonResponse.route;
-      console.log(routeObject.distance);
       
       if (routeObject.distance === 0) {
         noRoute();
@@ -92,6 +91,7 @@ const noRoute = () => {
       
   const handleLocationSubmit = (event) => {
     event.preventDefault();
+    setMapResult('');
     walking();
     biking();
   }
@@ -104,14 +104,32 @@ const noRoute = () => {
     setDestination(event.target.value)
   }
 
+  // current location 
+
+  const myLocation = () => {
+    const locationFinder = (pos) => {
+      let crd = pos.coords;
+      let currentLocation =`${crd.latitude}, ${crd.longitude}`
+      setLocation(currentLocation)
+    }
+    navigator.geolocation.getCurrentPosition(locationFinder);
+  }
+
   return (
-    <>
+    <div className="fadeIn">
       <h2>Step 1: Pick a location AND destination to get started.</h2>
+      <p className="stepOneNote">*** Add a city to the end of address for specificity ***</p>
+      <p className="stepOneNote">Click on <BiCurrentLocation /> icon to give your current location.</p>
       <div className="locationFormContainer">
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
           <div className="locationInputs">
-            <label htmlFor="currentLocation">Current Location:</label>
-            <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+
+            <div className="currentLocation">
+              <label htmlFor="currentLocation">Starting Location:</label>
+              <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
+
+              <button type="button" aria-label="use your current location" className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
+            </div>
 
             <label htmlFor="destination">Your Destination:</label>
             <input placeholder="1 Blue Jays Way Toronto" required type="text" id="destination" onChange={handleDestinationInput} value={destination}></input>
@@ -124,9 +142,9 @@ const noRoute = () => {
       </div>
 
       {walkResponse.length === 0 ? '' :
-        <div className="wrapper transportationContainer">
+        <div className="wrapper transportationContainer fadeIn">
             <h2>Step 2: Tell us how you want to get there.</h2>
-            <p>***We do not recommend using headphones while biking. Use your best judgement***</p>
+            <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement***</p>
             <div className="transportIconContainer">
               <button aria-label="transportation method: walk"
                 onClick={()=>{
@@ -160,11 +178,11 @@ const noRoute = () => {
       }
       <div className="mapContainer">
         {mapResults 
-          ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
+          ? <img className="mapResult fadeIn" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
           : <Giphy />
         }
       </div>
-    </>
+    </div>
   )
 }
 
