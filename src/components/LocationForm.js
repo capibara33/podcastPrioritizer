@@ -70,6 +70,7 @@ const staticMap = (sessionId) => {
       
   const handleLocationSubmit = (event) => {
     event.preventDefault();
+    setMapResult('');
     walking();
     biking();
   }
