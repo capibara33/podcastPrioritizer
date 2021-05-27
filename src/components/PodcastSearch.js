@@ -1,6 +1,5 @@
 import { FaArrowCircleRight } from 'react-icons/fa';
 import { useState } from 'react'
-import { animateScroll as scroll } from 'react-scroll';
 import { Link } from 'react-scroll';
 
 const PodcastSearch = (props) => {
