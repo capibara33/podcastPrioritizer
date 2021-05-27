@@ -18,12 +18,9 @@ const Giphy = () => {
             })
             .then((jsonGiphyResponse) => {
                 const giphyArray = (jsonGiphyResponse.data);
-    
                     const randomGiph = giphyArray[Math.floor(Math.random() * giphyArray.length)];
-
                     setGiph(randomGiph);
-            });
-            
+            }); 
         }, []);        
 
     let giphySrc

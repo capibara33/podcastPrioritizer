@@ -408,10 +408,49 @@ footer img {
     margin: 0.5rem 0 1rem 0;
 }
 
+/* MEDIA QUERIES START HERE */
+
 @media (max-width: 400px) {
   .swal2-title {
     font-size: 1.5rem !important;
   }
+}
 
+@media (max-width: 350px) {
+    .locationForm {
+        flex-direction: column;
+    }
+
+    .locationButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .locationButton {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+
+    .mapResult {
+        width: 300px;
+        height: 300px;
+    }
+
+    .podcastSearchForm {
+        flex-direction: column;
+    }
+
+    .podcastSearchForm input {
+        margin-top: 0.5rem;
+    }
+
+    .podcastButton {
+        margin-left: 1rem;
+    }
+
+    .listennotesLogo {
+        max-width: 14rem;
+    }
 }
 
