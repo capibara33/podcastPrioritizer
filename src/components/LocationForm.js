@@ -92,6 +92,7 @@ const noRoute = () => {
       
   const handleLocationSubmit = (event) => {
     event.preventDefault();
+    setMapResult('');
     walking();
     biking();
   }
