@@ -25,7 +25,7 @@ body {
 }
 
 .content {
-    min-height: calc(100vh - 8rem);
+    min-height: calc(100vh - 13rem);
 }
 
 h1 {
@@ -71,7 +71,7 @@ footer {
     background-color: #EDF2EF;
     padding: 1rem;
     text-align: center;
-    height: 8rem;
+    height: 13rem;
 }
 
 footer p {
@@ -393,7 +393,8 @@ a {
 }
 
 footer p,
-footer img {
+footer img,
+footer div {
     padding: 0.2rem;
 }
 
@@ -403,8 +404,7 @@ footer img {
     border: none;
 }
 
-.githubLinks a,
-footer div a {
+footer a {
     font-weight: bolder;
 }
 
@@ -423,7 +423,7 @@ footer div a {
 
 .scrollToTop {
     padding: 0.5rem 2rem;
-    background-color: #E8EB5E;
+    background-color: #F97068;
     border: none;
     box-shadow: 2px 2px 2px #333;
     margin: 0.5rem 0 1rem 0;
@@ -433,12 +433,6 @@ footer div a {
 
 /* For desktop screens */
 @media (min-width: 700px) {
-    .podcastResultsContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    }
-
     .podcastImage {
     height: 200px;
     width: 200px;
@@ -446,8 +440,8 @@ footer div a {
 
     .podcastResults h2 {
     font-size: 2rem;
-    padding-top: 1rem;
-    }
+    padding-top: 2rem;
+  }
 
     .resultsTitle {
     font-size: 1.4rem;
@@ -514,6 +508,27 @@ footer div a {
 
   .listennotesLogo {
     max-width: 12rem;
+  }
+}
+
+/* @media (max-height: 1000px) */
+
+/* STYLING FOR ANIMATION PURPOSES */
+
+.fadeIn {
+  animation: fadeIn 2000ms ease 1;
+ -webkit-animation: fadeIn 2000ms ease 1;
+ -moz-animation: fadeIn 2000ms ease 1;
+ -o-animation: fadeIn 2000ms ease 1;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
   }
 }
 

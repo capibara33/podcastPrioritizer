@@ -1,19 +1,11 @@
 import Swal from 'sweetalert2';
 import { FiExternalLink } from 'react-icons/fi';
 import timeConverter from '../utilities/timeConverter.js';
-import { animateScroll as scroll } from 'react-scroll';
 
 const PodcastResults = (props) => {
     const { podcastInfo } = props
 
-    const toTop = () => {
-        scroll.scrollToTop();
-    }
-
-    console.log(podcastInfo);
-
     return (
-
         <section className="podcastResults" name="results" id="results">
             {/* This ternary allows the h2 to append if the array is not empty */}
             {podcastInfo.length !== 0 && <h2> Step 4: Pick a podcast.</h2>}
@@ -54,9 +46,6 @@ const PodcastResults = (props) => {
                         : <p></p>
                     }
                 </ul>
-            </div>
-            <div className="wrapper scrollButtonContainer">
-                <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
             </div>
         </section>
     )

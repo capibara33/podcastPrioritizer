@@ -117,16 +117,16 @@ const noRoute = () => {
   }
 
   return (
-    <>
+    <div className="fadeIn">
       <h2>Step 1: Pick a location AND destination to get started.</h2>
-      <p className="stepOneNote">*** Add a city to the end of each address for specificity ***</p>
-      <p className="stepOneNote">Click on THIS ICON to give your current location.</p>
+      <p className="stepOneNote">*** Add a city to the end of address for specificity ***</p>
+      <p className="stepOneNote">Click on <BiCurrentLocation /> icon to give your current location.</p>
       <div className="locationFormContainer">
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
           <div className="locationInputs">
 
             <div className="currentLocation">
-              <label htmlFor="currentLocation">Current Location:</label>
+              <label htmlFor="currentLocation">Starting Location:</label>
               <input  placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
               <button type="button" aria-label="use your current location" className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
@@ -143,7 +143,7 @@ const noRoute = () => {
       </div>
 
       {walkResponse.length === 0 ? '' :
-        <div className="wrapper transportationContainer">
+        <div className="wrapper transportationContainer fadeIn">
             <h2>Step 2: Tell us how you want to get there.</h2>
             <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement***</p>
             <div className="transportIconContainer">
@@ -179,11 +179,11 @@ const noRoute = () => {
       }
       <div className="mapContainer">
         {mapResults 
-          ? <img className="mapResult" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
+          ? <img className="mapResult fadeIn" src={mapResults} alt={`map showing a route from ${location} to ${destination}`}></img>
           : <Giphy />
         }
       </div>
-    </>
+    </div>
   )
 }
 
