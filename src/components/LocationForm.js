@@ -80,7 +80,6 @@ const noRoute = () => {
     })
     .then((jsonResponse) => {
       const routeObject = jsonResponse.route;
-      console.log(routeObject.distance);
       
       if (routeObject.distance === 0) {
         noRoute();
