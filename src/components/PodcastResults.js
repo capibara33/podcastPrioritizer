@@ -10,6 +10,8 @@ const PodcastResults = (props) => {
         scroll.scrollToTop();
     }
 
+    console.log(podcastInfo);
+
     return (
 
         <section className="podcastResults" name="results" id="results">

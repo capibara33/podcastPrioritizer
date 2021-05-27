@@ -50,10 +50,6 @@ h3 {
     text-align: center;
 }
 
-p {
-  margin: 0.5rem;
-}
-
 img{
     /* border: 5px solid #F97068; */
     border: 5px solid skyblue;
@@ -295,12 +291,6 @@ a {
     border-radius: 15px;
 }
 
-
-
-.resultsTitle{
-    padding: 0 2rem;
-}
-
 .podcastResults {
     background-color: #F97068;
 }
@@ -317,11 +307,11 @@ a {
     padding-top: 1rem;
 }
 
-.podcastResults h3{
+.resultsTitle{
     font-size: 1.1rem;
     text-align: center;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 2rem;
 }
 
 .podcastResultsContainer {
@@ -425,7 +415,36 @@ footer img {
     margin: 0.5rem 0 1rem 0;
 }
 
-/* MEDIA QUERIES START HERE */
+/* -------------- MEDIA QUERIES START HERE -------------- */
+
+/* For desktop screens */
+@media (min-width: 700px) {
+  .podcastResultsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .podcastImage {
+    height: 200px;
+    width: 200px;
+  }
+
+  .podcastResults h2 {
+    font-size: 1.7rem;
+    padding-top: 1rem;
+  }
+
+  .resultsTitle {
+    font-size: 1.4rem;
+  }
+
+  .podcastInfoContainer {
+    font-size: 1rem;
+  }
+}
+
+/* For most phone sizes */
 @media (max-width: 500px) {
     .locationForm {
       flex-direction: column;
@@ -460,7 +479,7 @@ footer img {
   }
 }
 
-
+/* For smaller phone sizes */
 @media (max-width: 400px) {
   .swal2-title {
     font-size: 1.5rem !important;
@@ -475,4 +494,5 @@ footer img {
         max-width: 12rem;
     }
 }
+
 
