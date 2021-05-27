@@ -22,6 +22,7 @@ function App() {
   return (
     
     <Fragment>
+      <div className="content">
       <LandingPage />
       
       <main>
@@ -31,6 +32,7 @@ function App() {
         <PodcastResults podcastInfo={podcasts} />
       </main>
 
+      </div>
       <footer>
         <p className="githubLinks">
           Team CAPIbara is: 
