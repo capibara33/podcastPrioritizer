@@ -161,7 +161,7 @@ const LocationForm = (props) => {
       {walkResponse.length === 0 ? '' :
       <div className="wrapper transportationContainer">
         <h2>Step 2: Tell us how you want to get there.</h2>
-        <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement.***</p>
+        <p className="stepTwoNote">We do not recommend using headphones while biking. Use your best judgement.</p>
         <div className="transportIconContainer">
           <button aria-label="transportation method: walk"
             onClick={() => {
