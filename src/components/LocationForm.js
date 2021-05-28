@@ -27,7 +27,13 @@ const LocationForm = (props) => {
   // static map function to set the image when map data is returned
   const staticMap = (sessionId) => {
     if (!sessionId) {
-      alert('plz write something');
+      Swal.fire({
+        title: 'No route found',
+        text: 'Route does not exist, try to be more specific',
+        confirmButtonText: "Return",
+        confirmButtonColor: "#F97068",
+        padding: "0"
+      })
     } else {
       const staticURL = new URL('https://www.mapquestapi.com/staticmap/v5/map')
       staticURL.search = new URLSearchParams({
