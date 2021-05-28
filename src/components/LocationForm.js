@@ -134,7 +134,7 @@ const LocationForm = (props) => {
   return (
     <div className="fadeIn">
       <h2>Step 1: Pick a location AND destination to get started.</h2>
-      <p className="stepOneNote">*** Add a city to the end of address for specificity. ***</p>
+      <p className="stepOneNote">Add a city to the end of address for specificity.</p>
       <p className="stepOneNote">Click on <BiCurrentLocation /> icon to give your current location.</p>
       <div className="locationFormContainer">
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
