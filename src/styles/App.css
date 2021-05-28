@@ -328,10 +328,7 @@ a {
 }
 
 .resultsTitle{
-  font-size: 1.1rem;
-  text-align: center;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .podcastTitleContainer {
@@ -487,8 +484,9 @@ footer a {
     width: 250px;
     height: 250px;
   }
+
   .podcastButton {
-    margin-left: 1rem;
+    margin-left: 0;
   }
   
   .listennotesLogo {
