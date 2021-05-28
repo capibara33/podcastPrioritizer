@@ -10,17 +10,6 @@ const PodcastResults = (props) => {
   // destructured the props
   const { podcastInfo } = props
 
-  console.log(podcastInfo);
-
-// if (podcastInfo.length === 0) {
-//   Swal.fire({
-//     title: 'Podcasts not found',
-//     text: 'Try a smaller commute or a more general topic search.',
-//     confirmButtonText: "Return",
-//     confirmButtonColor: "#F97068",
-//     padding: "0"
-//   })
-// }
 // render podcast results section
   return (
     <section className="podcastResults" name="results" id="results">
@@ -33,7 +22,7 @@ const PodcastResults = (props) => {
               <li key={index}>
                 <div className="liContainer">
                   <div className="podcastTitleContainer">
-                    <img className="podcastImage" src={episodeImage} alt="" />
+                    <img className="podcastImage" src={episodeImage} alt={`cover art for ${podcastTitle}`} />
                     <h3 className="resultsTitle">{podcastTitle}</h3>
                   </div>
                   <div className="podcastInfoContainer">

@@ -26,10 +26,11 @@ const LocationForm = (props) => {
 
   // static map function to set the image when map data is returned
   const staticMap = (sessionId) => {
+    // error handling when transportation icon does not have a distance associated with it
     if (!sessionId) {
       Swal.fire({
-        title: 'No route found',
-        text: 'Route does not exist, try to be more specific',
+        title: 'Map not found',
+        text: 'Map does not exist for selected transport method, try inputting a shorter route.',
         confirmButtonText: "Return",
         confirmButtonColor: "#F97068",
         padding: "0"
@@ -44,11 +45,11 @@ const LocationForm = (props) => {
     }
   }
 
-  // error handling when distance
+  // error handling when location or destination inputs are invalid
   const noRoute = () => {
     Swal.fire({
       title: 'No route found',
-      text: 'Route does not exist, try to be more specific',
+      text: 'Route does not exist, try to be more specific.',
       confirmButtonText: "Return",
       confirmButtonColor: "#F97068",
       padding: "0"
@@ -125,7 +126,6 @@ const LocationForm = (props) => {
     setDestination(event.target.value)
   }
 
-
   // current location function to get geo location 
   const myLocation = () => {
     const locationFinder = (pos) => {
@@ -147,7 +147,7 @@ const LocationForm = (props) => {
           <div className="locationInputs">
             <div className="currentLocation">
               {/* Current location input */}
-              <label htmlFor="currentLocation">Your Location:</label>
+              <label htmlFor="location">Your Location:</label>
               <input placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
               <button type="button" aria-label="use your current location" className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
@@ -161,9 +161,9 @@ const LocationForm = (props) => {
             <button type="submit" className="locationButton"><FaArrowCircleRight /></button>
           </div>
         </form>
-        {/* Transportation mode container */}
       </div>
 
+      {/* Transportation mode container */}
       {walkResponse.length === 0 ? '' :
       <div className="wrapper transportationContainer">
         <h2>Step 2: Tell us how you want to get there.</h2>
@@ -175,7 +175,10 @@ const LocationForm = (props) => {
               staticMap(walkResponse.sessionId);
             }}>
             <FaWalking />
+            {/* TIMECONVERTER FUNCTION FOUND IN UTILITIES FOLDER */}
+            {/* timeconverter function is used here to convert realTime in seconds to a string with hours and minutes */}
             <p>Time: {timeConverter(walkResponse.realTime)}</p>
+            {/* timeconverter function is used here to convert distance to a string with kilometers */}
             {walkResponse.distance
               ? <p>Distance: {(walkResponse.distance).toFixed(1)} km</p>
               : <p>Distance:</p>}
@@ -185,7 +188,9 @@ const LocationForm = (props) => {
             staticMap(bikeResponse.sessionId);
           }}>
             <FaBicycle />
+            {/* timeconverter function is used here to convert realTime in seconds to a string with hours and minutes */}
             <p>Time: {timeConverter(bikeResponse.realTime)}</p>
+            {/* timeconverter function is used here to convert distance to a string with kilometers */}
             {bikeResponse.distance
               ? <p>Distance {(bikeResponse.distance).toFixed(1)} km</p>
               : <p>Distance:</p>

@@ -28,13 +28,13 @@ function App() {
   return (
     <Fragment>
       <div className="content">
-      <LandingPage />
-      <main>
-        <LocationForm 
-        handleCommuteTime={handleCommuteTime}/>
-        <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
-        <PodcastResults podcastInfo={podcasts} />
-      </main>
+        <LandingPage />
+        <main>
+          <LocationForm 
+          handleCommuteTime={handleCommuteTime}/>
+          <PodcastSearch handlePodcastData={handlePodcastData} commuteTime={commuteTime}/>
+          <PodcastResults podcastInfo={podcasts} />
+        </main>
       </div>
       <Footer />
     </Fragment>

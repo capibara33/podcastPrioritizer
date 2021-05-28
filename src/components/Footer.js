@@ -1,7 +1,7 @@
 import { animateScroll as scroll } from 'react-scroll';
 
-
 const Footer = () => {
+  // This is scroll to top button function
   const toTop = () => {
     scroll.scrollToTop();
   }

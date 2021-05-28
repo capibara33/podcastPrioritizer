@@ -2,7 +2,9 @@
 import { useState } from 'react'
 // import arrow icon
 import { FaArrowCircleRight } from 'react-icons/fa';
+// import scroll function to podcast results section
 import { Link } from 'react-scroll';
+// import sweet alert
 import Swal from 'sweetalert2';
 
 const PodcastSearch = (props) => {
@@ -88,7 +90,6 @@ const PodcastSearch = (props) => {
 		<section className="wrapper podcastForm">
 		{commuteTime === 0 ? '' : 
 		<div className="fadeIn">
-      
 			<h2>Step 3: Search for Podcast by title, genre, or topic.</h2>
 			<p className="stepThreeNote">Commutes longer than five hours may affect podcast results.</p>
 			<form action=""className="podcastSearchForm">
