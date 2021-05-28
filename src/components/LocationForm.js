@@ -141,7 +141,7 @@ const LocationForm = (props) => {
           <div className="locationInputs">
             <div className="currentLocation">
               {/* Current location input */}
-              <label htmlFor="currentLocation">Current Location:</label>
+              <label htmlFor="currentLocation">Your Location:</label>
               <input placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
 
               <button type="button" aria-label="use your current location" className="myLocation" onClick={() => { myLocation() }}><BiCurrentLocation /></button>
