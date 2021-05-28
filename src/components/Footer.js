@@ -1,7 +1,7 @@
 import { animateScroll as scroll } from 'react-scroll';
 
-
 const Footer = () => {
+  // This is scroll to top button function
   const toTop = () => {
     scroll.scrollToTop();
   }
@@ -9,7 +9,7 @@ const Footer = () => {
   return(
     <footer>
       <div className="wrapper scrollButtonContainer">
-          <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
+        <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
       </div>
       <p className="githubLinks">
         Team CAPIbara is:

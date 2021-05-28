@@ -8,6 +8,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 @import url('https://fonts.googleapis.com/css2?family=Judson&family=Lato:wght@300&display=swap');
 
+/* GLOBAL STYLES */
+
 html {
   font-size: 125%;
 }
@@ -18,36 +20,31 @@ body {
   background-color: #E8EB5E;
 }
 
-.content {
-    min-height: calc(100vh - 15rem);
-}
-
 h1,
 h2,
 h3 {
   font-family: 'Judson', serif;
+  text-align: center;
 }
 
 h1 {
   font-size: 3rem;
-  text-align: center;
   margin: 0;
   padding: 1rem;
 }
 
 h2 {
   font-size: 1rem;
-  text-align: center;
 }
 
 h3 {
   margin: 1rem 0;
-  text-align: center;
 }
 
 p {
   margin: 0.5rem;
 }
+
 
 img{
   border: 5px solid skyblue;
@@ -65,11 +62,26 @@ li {
   width: 100%;
 }
 
+/* content was created so that footer is fixed to the bottom of the screen always */
+.content {
+  min-height: calc(100vh - 15rem);
+}
+
 footer {
   background-color: #EDF2EF;
   padding-top: 1rem;
   text-align: center;
   height: 15rem;
+}
+
+footer p,
+footer img,
+footer div {
+  padding: 0.2rem;
+}
+
+footer a {
+  font-weight: bolder;
 }
 
 footer p {
@@ -82,7 +94,6 @@ footer p {
   margin: 0 auto;
 }
 
-
 header,
 main {
   background-color: #E8EB5E;
@@ -93,45 +104,11 @@ a {
   text-decoration: none;
 }
 
+/* -------------- STYLINGS FOR BUTTONS -------------- */
 
-.locationFormContainer {
-  display: flex;
-  align-items: center;
+button {
+  cursor: pointer;
 }
-
-
-.instructionsContainer {
-  background-color: #F97068;
-}
-
-.instructionsContainer h2 {
-  text-align: center;
-  padding: 1rem;
-}
-
-
-.locationInputs {
-  display: flex;
-  flex-direction: column;
-}
-
-.locationInputs input,
-.podcastSearchForm input {
-  width: 18rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #F97068;
-  border-radius: 0.3rem;
-}
-
-.locationInputs label {
-  margin: 0.5rem 0;
-}
-
-.locationForm {
-  flex-direction: row;
-  align-items: center;
-}
-
 
 .locationButton,
 .podcastButton {
@@ -142,12 +119,14 @@ a {
   font-size: 2rem;
 }
 
+/* These stylings belong to ARROW buttons and CURRENT LOCATION button */
 .locationButton:hover,
 .podcastButton:hover, 
 .locationButton:focus,
-.podcastButton:focus {
+.podcastButton:focus,
+.myLocation:hover,
+.myLocation:focus {
   color: #F97068;
-  cursor: pointer;
 }
 
 .randomPodcastButton:hover,
@@ -159,28 +138,22 @@ a {
 .scrollToTop:hover,
 .scrollToTop:focus {
   background-color: #EFC88B;
-  cursor: pointer;
 }
 
 .locationButton {
   margin-top: 2.1rem
 }
 
-/* This makes sure the buttons container doesn't get too big */
-.transportationContainer {
-  max-width: 900px;
-  margin-top: 2rem;
-}
-
-.transportationContainer h2 {
-  text-align: center;
-}
-
-.stepOneNote,
-.stepTwoNote,
-.stepThreeNote {
-  text-align: center;
-  font-size: 0.8rem;
+.myLocation {
+  height: 2rem;
+  border: none;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 0;
 }
 
 .transportationContainer button:focus,
@@ -204,7 +177,6 @@ a {
   font-size: 2rem;
 }
 
-
 .transportIconContainer button:nth-of-type(1) {
   margin-right: 0.5rem;
 }
@@ -219,38 +191,124 @@ a {
   margin: 0;
 }
 
+.walkButton:hover,
+.walkButton:focus,
+.bikeButton:hover,
+.bikeButton:focus,
+.podcastResults,
+.podcastResultsContainer {
+  background-color: #F97068;
+}
+
+.podcastButton {
+  margin-top: 0.5rem
+}
+
+.randomPodcastButton {
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem;
+}
+
+.learnMoreButton, 
+.listenLink {
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.listenLink {
+  font-weight: bolder;
+}
+
+.scrollToTop {
+  padding: 0.5rem 2rem;
+  background-color: #F97068;
+  border: none;
+  box-shadow: 2px 2px 2px #333;
+  margin: 0.5rem 0 1rem 0;
+}
+
+/* -------------- STYLINGS FOR FORM INPUTS -------------- */
+
+.locationInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationInputs input,
+.podcastSearchForm input {
+  width: 18rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #F97068;
+  border-radius: 0.3rem;
+}
+
+.locationInputs label {
+  margin: 0.5rem 0;
+}
+
+.podcastSearchForm input {
+  margin-top: 1rem;
+}
+
+/* STYLINGS FOR CONTAINERS AND TEXT ELEMENTS (IN ORDER OF APPEARANCE) */
+
+.instructionsContainer {
+  background-color: #F97068;
+}
+
+.instructionsContainer h2 {
+  padding: 1rem;
+}
+
+/* These are for notes right below each step */
+.stepOneNote,
+.stepTwoNote,
+.stepThreeNote {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.locationFormContainer {
+  display: flex;
+  align-items: center;
+}
+
+.locationForm {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* This makes sure the buttons container doesn't get too big */
+.transportationContainer {
+  max-width: 900px;
+  margin-top: 2rem;
+}
+
 .currentLocation {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.myLocation {
-  height: 2rem;
-  border: none;
-  position: absolute;
-  bottom: 0.1rem;
-  right: 0.1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  font-size: 1.8rem;
-  padding: 0;
-}
-
-.myLocation:hover {
-  color: #F97068;
-}
-
-.walkButton:hover,
-.bikeButton:hover,
-.podcastResults,
-.podcastResultsContainer {
-  background-color: #F97068;
-}
-
 .mapContainer {
   align-items: center;
   margin: 1rem 0;
+}
+
+/* This is for gif images on page reload */
+.giph {
+  border: 0;
+  display: block;
+  height: auto;
+  width: calc(11rem + 4vw);
 }
 
 .mapResult {
@@ -273,23 +331,8 @@ a {
   margin: 0.5rem auto;
 }
 
-.podcastSearchForm input {
-  margin-top: 1rem;
-}
-
 .podcastButtonContainer {
   margin: 1rem 0 0 0;
-}
-
-.podcastButton {
-  margin-top: 0.5rem
-}
-
-.randomPodcastButton {
-  background-color: #F97068;
-  border: none;
-  box-shadow: 2px 2px 2px #333;
-  margin: 0.5rem 0 1rem 0;
 }
 
 .randomPodcastContainer,
@@ -301,10 +344,6 @@ a {
 .locationForm {
   display: flex;
   justify-content: center;
-}
-
-.randomPodcastButton {
-  padding: 0.5rem;
 }
 
 .podcastImage {
@@ -328,10 +367,7 @@ a {
 }
 
 .resultsTitle{
-  font-size: 1.1rem;
-  text-align: center;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .podcastTitleContainer {
@@ -373,56 +409,15 @@ a {
   align-items: center;
 }
 
-.learnMoreButton, 
-.listenLink {
-  background-color: #F97068;
-  border: none;
-  box-shadow: 2px 2px 2px #333;
-  margin: 1rem 0;
-  padding: 0.5rem;
-  text-decoration: none;
-  color: black;
-}
-
-.listenLink {
-  font-weight: bolder;
-}
-
-footer p,
-footer img,
-footer div {
-  padding: 0.2rem;
-}
-
-
 .listennotesLogo {
   max-width: 16rem;
   border: none;
-}
-
-footer a {
-  font-weight: bolder;
-}
-
-.giph {
-  border: 0;
-  display: block;
-  height: auto;
-  width: calc(11rem + 4vw);
 }
 
 /* To target text in Sweet Alert pop-up when user clicks on "Learn More" button */
 .swal2-html-container {
   max-height: 15rem;
   overflow-y: scroll;
-}
-
-.scrollToTop {
-  padding: 0.5rem 2rem;
-  background-color: #F97068;
-  border: none;
-  box-shadow: 2px 2px 2px #333;
-  margin: 0.5rem 0 1rem 0;
 }
 
 /* -------------- MEDIA QUERIES START HERE -------------- */
@@ -456,7 +451,6 @@ footer a {
   }
 }
 
-
 @media (max-width: 400px) {
   /* This is to override the styling on the Sweet Alert plug-in to resize header text  */
   .swal2-title {
@@ -466,12 +460,6 @@ footer a {
   .locationInputs input,
   .podcastSearchForm input {
     width: 13rem;
-  }
-
-  .locationButtonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .podcastSearchForm input {
@@ -487,8 +475,9 @@ footer a {
     width: 250px;
     height: 250px;
   }
+
   .podcastButton {
-    margin-left: 1rem;
+    margin-left: 0;
   }
   
   .listennotesLogo {
@@ -496,13 +485,13 @@ footer a {
   }
 }
 
-/* STYLING FOR ANIMATION PURPOSES ONLY*/
+/* -------------- STYLING FOR ANIMATION PURPOSES ONLY -------------- */
 
 .fadeIn {
   animation: fadeIn 2000ms ease 1;
- -webkit-animation: fadeIn 2000ms ease 1;
- -moz-animation: fadeIn 2000ms ease 1;
- -o-animation: fadeIn 2000ms ease 1;
+  -webkit-animation: fadeIn 2000ms ease 1;
+  -moz-animation: fadeIn 2000ms ease 1;
+  -o-animation: fadeIn 2000ms ease 1;
 }
 
 @keyframes fadeIn {
