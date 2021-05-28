@@ -258,7 +258,7 @@ button {
   margin-top: 1rem;
 }
 
-/* STYLINGS FOR CONTAINERS AND TEXT ELEMENTS (IN ORDER OF APPEARANCE */
+/* STYLINGS FOR CONTAINERS AND TEXT ELEMENTS (IN ORDER OF APPEARANCE) */
 
 .instructionsContainer {
   background-color: #F97068;
@@ -489,9 +489,9 @@ button {
 
 .fadeIn {
   animation: fadeIn 2000ms ease 1;
- -webkit-animation: fadeIn 2000ms ease 1;
- -moz-animation: fadeIn 2000ms ease 1;
- -o-animation: fadeIn 2000ms ease 1;
+  -webkit-animation: fadeIn 2000ms ease 1;
+  -moz-animation: fadeIn 2000ms ease 1;
+  -o-animation: fadeIn 2000ms ease 1;
 }
 
 @keyframes fadeIn {
