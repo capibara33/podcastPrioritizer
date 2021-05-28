@@ -75,9 +75,8 @@ const PodcastSearch = (props) => {
 	return(
 		<section className="wrapper podcastForm">
 		{commuteTime === 0 ? '' : 
-
-
 		<div className="fadeIn">
+      
 			<h2>Step 3: Search for Podcast by title, genre, or topic.</h2>
 			<p className="stepThreeNote">*** Commutes longer than five hours may affect podcast results. ***</p>
 			<form action=""className="podcastSearchForm">
@@ -87,9 +86,10 @@ const PodcastSearch = (props) => {
         <Link to="results" smooth={true} delay={400}> <button className="podcastButton" type="submit" onClick={handleSubmit}><FaArrowCircleRight /></button></Link>
 				</div>
 			</form>
-				<div className="randomPodcastContainer">
-					<Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
-				</div>
+
+      <div className="randomPodcastContainer">
+        <Link to="results" smooth={true} delay={400}> <button className="randomPodcastButton" onClick={handleRandomButtonClick}>Want a suggestion? </button></Link>
+      </div>
 		</div>
 		}
 		</section>

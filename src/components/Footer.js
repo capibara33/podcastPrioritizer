@@ -9,7 +9,7 @@ const Footer = () => {
   return(
     <footer>
       <div className="wrapper scrollButtonContainer">
-          <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
+        <button className="scrollToTop" onClick={toTop}>Scroll to top</button>
       </div>
       <p className="githubLinks">
         Team CAPIbara is:

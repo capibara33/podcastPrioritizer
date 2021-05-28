@@ -87,7 +87,6 @@ const LocationForm = (props) => {
       routeType: 'bicycle'
     })
     fetch(mapQuestURL)
-
       .then((response) => {
         return response.json();
       })
@@ -141,7 +140,6 @@ const LocationForm = (props) => {
         <form action="submit" className="wrapper locationForm" onSubmit={handleLocationSubmit}>
           <div className="locationInputs">
             <div className="currentLocation">
-
               {/* Current location input */}
               <label htmlFor="currentLocation">Current Location:</label>
               <input placeholder="483 Queen St W Toronto" required type="text" id="currentLocation" onChange={handleLocationInput} value={location}></input>
@@ -160,37 +158,36 @@ const LocationForm = (props) => {
         {/* Transportation mode container */}
       </div>
 
-        {walkResponse.length === 0 ? '' :
-        <div className="wrapper transportationContainer">
-          <h2>Step 2: Tell us how you want to get there.</h2>
-          <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement.***</p>
-          <div className="transportIconContainer">
-            <button aria-label="transportation method: walk"
-              onClick={() => {
-
-                handleCommuteTime(walkResponse.realTime);
-                staticMap(walkResponse.sessionId);
-              }}>
-              <FaWalking />
-              <p>Time: {timeConverter(walkResponse.realTime)}</p>
-              {walkResponse.distance
-                ? <p>Distance: {(walkResponse.distance).toFixed(1)} km</p>
-                : <p>Distance:</p>}
-            </button>
-            <button aria-label="transportation method: bicycle" onClick={() => {
-              handleCommuteTime(bikeResponse.realTime);
-              staticMap(bikeResponse.sessionId);
+      {walkResponse.length === 0 ? '' :
+      <div className="wrapper transportationContainer">
+        <h2>Step 2: Tell us how you want to get there.</h2>
+        <p className="stepTwoNote">***We do not recommend using headphones while biking. Use your best judgement.***</p>
+        <div className="transportIconContainer">
+          <button aria-label="transportation method: walk"
+            onClick={() => {
+              handleCommuteTime(walkResponse.realTime);
+              staticMap(walkResponse.sessionId);
             }}>
-              <FaBicycle />
-              <p>Time: {timeConverter(bikeResponse.realTime)}</p>
-              {bikeResponse.distance
-                ? <p>Distance {(bikeResponse.distance).toFixed(1)} km</p>
-                : <p>Distance:</p>
-              }
-            </button>
-          </div>
+            <FaWalking />
+            <p>Time: {timeConverter(walkResponse.realTime)}</p>
+            {walkResponse.distance
+              ? <p>Distance: {(walkResponse.distance).toFixed(1)} km</p>
+              : <p>Distance:</p>}
+          </button>
+          <button aria-label="transportation method: bicycle" onClick={() => {
+            handleCommuteTime(bikeResponse.realTime);
+            staticMap(bikeResponse.sessionId);
+          }}>
+            <FaBicycle />
+            <p>Time: {timeConverter(bikeResponse.realTime)}</p>
+            {bikeResponse.distance
+              ? <p>Distance {(bikeResponse.distance).toFixed(1)} km</p>
+              : <p>Distance:</p>
+            }
+          </button>
         </div>
-      }
+      </div>
+    }
       {/* map results container displays when user selects a mode of transport */}
       <div className="mapContainer">
         {mapResults 
