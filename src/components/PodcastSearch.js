@@ -3,6 +3,7 @@ import { useState } from 'react'
 // import arrow icon
 import { FaArrowCircleRight } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import Swal from 'sweetalert2';
 
 const PodcastSearch = (props) => {
 	const podcastURL = new URL('https://listen-api.listennotes.com/api/v2/search')
@@ -43,8 +44,19 @@ const PodcastSearch = (props) => {
 					episodeLengthInSec:podcast.audio_length_sec
 				}
 			})
-      // return the podcastArray to App.js's handlePodcastData handler function
-      handlePodcastData(podcastArray)
+      // This conditional alerts the user if their podcast search does not bring up any results
+      if (podcastData.length === 0) {
+        Swal.fire({
+          title: 'Podcasts not found',
+          text: 'Try a smaller commute or a more general topic search.',
+          confirmButtonText: "Return",
+          confirmButtonColor: "#F97068",
+          padding: "0"
+        })
+      } else {
+        // return the podcastArray to App.js's handlePodcastData handler function
+        handlePodcastData(podcastArray)
+      }
 		})
 	})
 
@@ -81,7 +93,7 @@ const PodcastSearch = (props) => {
 			<p className="stepThreeNote">*** Commutes longer than five hours may affect podcast results. ***</p>
 			<form action=""className="podcastSearchForm">
 				<label htmlFor="podcastSearch" aria-label="Step 3: Search for Podcast Title or Keyword."></label>
-				<input type="text" placeholder="Corgis, Nicolas cage, Manga" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
+				<input type="text" placeholder="Corgis, Movies, Manga" id="podcastSearch" name="podcastSearch" onChange={handlePodcastSearch} value={userSearch} required/>
 				<div className="podcastButtonContainer">
         <Link to="results" smooth={true} delay={400}> <button className="podcastButton" type="submit" onClick={handleSubmit}><FaArrowCircleRight /></button></Link>
 				</div>

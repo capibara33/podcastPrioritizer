@@ -10,8 +10,17 @@ const PodcastResults = (props) => {
   // destructured the props
   const { podcastInfo } = props
 
+  console.log(podcastInfo);
 
- 
+// if (podcastInfo.length === 0) {
+//   Swal.fire({
+//     title: 'Podcasts not found',
+//     text: 'Try a smaller commute or a more general topic search.',
+//     confirmButtonText: "Return",
+//     confirmButtonColor: "#F97068",
+//     padding: "0"
+//   })
+// }
 // render podcast results section
   return (
     <section className="podcastResults" name="results" id="results">
@@ -19,8 +28,7 @@ const PodcastResults = (props) => {
       {podcastInfo.length !== 0 && <h2> Step 4: Pick a podcast.</h2>}
       <div className="wrapper podcastResultsContainer">
         <ul className="podcastsList">
-          {/* This ternary maps through the podcast components when it receives data from the podcast form */}
-          {podcastInfo ? podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio }, index) => {
+          {podcastInfo.map(({ podcastTitle, episodeTitle, episodeImage, episodeDescription, episodeLengthInSec, episodeAudio }, index) => {
             return (
               <li key={index}>
                 <div className="liContainer">
@@ -49,9 +57,7 @@ const PodcastResults = (props) => {
               </li>
             )
           })
-            // this is the end of ternary - if there is no podcast, an empty <p> tag will take its place
-            : <p></p>
-          }
+        }
         </ul>
       </div>
     </section>
