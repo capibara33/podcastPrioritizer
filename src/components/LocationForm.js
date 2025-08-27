@@ -22,7 +22,9 @@ const LocationForm = (props) => {
   // destructure props
   const { handleCommuteTime } = props
 
-  const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
+  // const mapQuestKey = 'tGIT7B6LGU7ji3ITYatLKJcdWNx98cKq';
+  const mapQuestKey = 'Yy68mrPt0DdfedMG8j0yFE1q8AfY6Lsg';
+  
 
   // static map function to set the image when map data is returned
   const staticMap = (sessionId) => {
